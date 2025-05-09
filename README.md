@@ -1,1 +1,1314 @@
-# akillitahtalar
+
+<<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vestel ve Arçelik akıllı tahtalar için güncel Windows imajları">
+  <title>Akıllı Tahta İmajları | Vestel & Arçelik</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <style>
+    :root {
+      --bg: #0a0e14;
+      --fg: #f0f4f8;
+      --accent: #2ecc71;
+      --accent-hover: #27ae60;
+      --card-bg: #1a1f27;
+      --card-gradient: linear-gradient(145deg, #1f252e, #14181f);
+      --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      --transition: all 0.3s ease-in-out;
+    }
+
+    body.light-mode {
+      --bg: #e9ecef;
+      --fg: #212529;
+      --accent: #27ae60;
+      --accent-hover: #2ecc71;
+      --card-bg: #ffffff;
+      --card-gradient: linear-gradient(145deg, #f8f9fa, #dee2e6);
+      --shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      transition: var(--transition);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--card-bg);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      padding: 0.5rem 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--fg) !important;
+    }
+
+    .navbar-brand i {
+      color: var(--accent);
+    }
+
+    .nav-link {
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: var(--transition);
+      color: var(--fg) !important;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 50%;
+    }
+
+    .nav-link:hover {
+      background-color: rgba(46, 204, 113, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: linear-gradient(rgba(10, 14, 20, 0.7), rgba(10, 14, 20, 0.7)),
+        url('img/FatihWallpaper.jpg') center/cover no-repeat;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    body.light-mode .hero {
+      background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+        url('img/FatihWallpaper.jpg') center/cover no-repeat;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      background: linear-gradient(90deg, var(--accent), var(--fg));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: var(--fg);
+      opacity: 0.9;
+    }
+
+    .start-btn {
+      background-color: var(--accent);
+      color: white !important;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+      }
+
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+      }
+
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+      }
+    }
+
+    .start-btn:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Cards */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(4, 350px);
+      gap: 2rem;
+      padding: 4rem 2rem;
+      max-width: 1520px;
+      /* 4 * 350px + 3 * 40px gaps = 1520px */
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--card-gradient);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      border: none;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s forwards;
+      width: 350px;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .card h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+
+    .card:hover h2::after {
+      width: 100px;
+    }
+
+    .card-image {
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      height: 200px;
+      /* Fixed height for consistent image size */
+      background: var(--card-bg);
+      /* Background color for letterboxed areas */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      /* Fill the container */
+      object-fit: contain;
+      /* Scale image to fit entirely within the container, no cropping */
+      display: block;
+      transition: var(--transition);
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .features-title {
+      font-weight: 600;
+      margin: 1.5rem 0 1rem;
+      font-size: 1.2rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .features ul {
+      text-align: left;
+      padding-left: 0;
+      margin-bottom: 2rem;
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .features li {
+      position: relative;
+      padding-left: 2rem;
+      color: var(--fg);
+      opacity: 0.95;
+    }
+
+    body.light-mode .features li {
+      color: var(--fg);
+      opacity: 1;
+    }
+
+    .features li::before {
+      content: "\f058";
+      font-family: "bootstrap-icons";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    /* Buttons */
+    .btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .download-btn,
+    .deepfreeze-btn {
+      position: relative;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+    }
+
+    .download-btn {
+      background-color: var(--accent);
+      color: white !important;
+    }
+
+    .deepfreeze-btn {
+      background-color: #1e90ff;
+      color: white !important;
+    }
+
+    .download-btn:hover,
+    .deepfreeze-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .download-btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .deepfreeze-btn:hover {
+      background-color: #1c7ed6;
+    }
+
+    .btn-loading::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid white;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s linear infinite;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Floating Buttons */
+    .theme-toggle,
+    .scroll-top {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      border: none;
+      cursor: pointer;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--card-bg);
+      color: var(--fg);
+      font-size: 1.3rem;
+      z-index: 998;
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(20deg) scale(1.1);
+    }
+
+    .scroll-top {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      background-color: var(--accent);
+      color: white;
+      font-size: 1.5rem;
+      display: none;
+      z-index: 999;
+    }
+
+    .scroll-top:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    .footer-social {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .footer-social a {
+      color: var(--fg);
+      font-size: 1.5rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .footer-social a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .footer-social a::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--accent);
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover::after {
+      opacity: 1;
+      visibility: visible;
+      bottom: 120%;
+    }
+
+    footer {
+      background-color: var(--card-bg);
+      color: var(--fg);
+      text-align: center;
+      padding: 3rem 0;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    footer a {
+      color: var(--fg);
+      transition: var(--transition);
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    /* Contact Modal */
+    .modal-content {
+      background-color: #14181f;
+      border: 2px solid var(--accent);
+      border-radius: 15px;
+      color: var(--fg);
+      backdrop-filter: blur(8px);
+      background-color: rgba(20, 24, 31, 0.8); /* biraz şeffaf */
+      border: 2px solid var(--accent);
+
+    }
+
+    .modal-header {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--fg);
+      width: 100%;
+      text-align: center;
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+    }
+
+    .modal-body form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .modal-body input,
+    .modal-body textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      background-color: var(--card-bg);
+      color: var(--fg);
+      font-size: 1rem;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .modal-body textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    .modal-body input::placeholder,
+    .modal-body textarea::placeholder {
+      color: #6c757d;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .modal-body button {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      align-self: center;
+    }
+
+    .modal-body button:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-3px);
+    }
+
+    .modal-footer {
+      border-top: none;
+      justify-content: center;
+    }
+
+    .btn-close {
+      filter: invert(1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+
+      .card-container {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        padding: 2rem 1rem;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+      }
+
+      .btn-group {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Tablet Mode (769px to 1024px) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .card-container {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        padding: 2rem 1rem;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 500px;
+        /* Increased card width for tablets */
+        margin: 0 auto;
+      }
+
+      .btn-group {
+        grid-template-columns: 1fr 1fr;
+        /* Keep two buttons side by side on tablets */
+      }
+      
+    }
+    .accordion-button {
+      background-color: #1a1f27;
+      color: var(--fg);
+      border: 1px solid var(--accent);
+      border-radius: 10px !important;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: var(--accent);
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  filter: invert(1);
+}
+
+.accordion-item {
+  background-color: transparent;
+  border: none;
+}
+
+    .fancybox__container {
+  z-index: 12000 !important;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Floating Buttons -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Sayfanın başına dön">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">
+    <i class="bi bi-moon-stars"></i>
+  </button>
+
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <i class="bi bi-easel"></i> Akıllı Tahta
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü aç/kapat">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">
+            Hakkımızda
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#installModal">
+            <i class="bi bi-download me-1"></i> Nasıl Kurulur?
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
+            Tahtanız Yok Mu? - Bize Ulaşın
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#usbModal">
+            <i class="bi bi-usb-drive me-1"></i> USB Önerisi
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#faqModal">
+            <i class="bi bi-question-circle me-1"></i> SSS
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="animate__animated animate__fadeInDown">Güncel Akıllı Tahtalar</h1>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">Hiçbir gereksiz uygulaması olmayan temiz ve hızlı
+        akıllı tahta imajları</p>
+      <a href="#products" class="start-btn mt-4 animate__animated animate__fadeInUp animate__delay-1s">
+        <i class="bi bi-arrow-down"></i> Başla
+      </a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main id="products">
+    <div class="container text-center py-5">
+      <h2 class="mb-5">Mevcut Tahta İmajları</h2>
+      <div class="card-container">
+        <!-- Card 1 - Vestel Siyah -->
+        <div class="card" tabindex="0">
+          <h2><i class="bi bi-display"></i> Vestel Siyah Tahta</h2>
+          <a href="img/siyahtahta.png" data-fancybox="gallery" data-caption="Vestel Siyah Tahta">
+            <div class="card-image">
+              <img src="img/siyahtahta.png" alt="Vestel Siyah Tahta" loading="lazy">
+            </div>
+          </a>
+          <div class="features">
+            <div class="features-title"><i class="bi bi-list-check"></i> Özellikler</div>
+            <ul>
+              <li>Windows 10/11 Pro (anahtarlı)</li>
+              <li>Driverlar kurulu ve optimize</li>
+              <li>Office 2013 Anahtarlı</li>
+              <li>Reklam engelleyici Chrome</li>
+              <li>Fatih Kalem ve Antropi Teach</li>
+              <li>Sınav Saati uygulaması</li>
+              <li>Admin Şifresi: 5894svs</li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="download-btn" aria-label="Windows 10 indir">
+              <i class="bi bi-download"></i> Windows 10
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="deepfreeze-btn" aria-label="DeepFreeze ile Windows 10 indir">
+              <i class="bi bi-shield-lock"></i> DF Win10
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="download-btn" aria-label="Windows 11 indir">
+              <i class="bi bi-download"></i> Windows 11
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="deepfreeze-btn" aria-label="DeepFreeze ile Windows 11 indir">
+              <i class="bi bi-shield-lock"></i> DF Win11
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 - Vestel Gri -->
+        <div class="card" tabindex="0">
+          <h2><i class="bi bi-display"></i> Vestel Gri Tahta</h2>
+          <a href="img/Fatih Faz 2 akıllı tahta.png" data-fancybox="gallery" data-caption="Vestel Gri Tahta">
+            <div class="card-image">
+              <img src="img/Faz 2 Gri akıllı tahta.png" alt="Vestel Gri Tahta" loading="lazy">
+            </div>
+          </a>
+          <div class="features">
+            <div class="features-title"><i class="bi bi-list-check"></i> Özellikler</div>
+            <ul>
+              <li>Windows 10/11 Pro (anahtarlı)</li>
+              <li>Driverlar kurulu ve optimize</li>
+              <li>Office 2013 Anahtarlı</li>
+              <li>Reklam engelleyici Chrome</li>
+              <li>Fatih Kalem ve Antropi Teach</li>
+              <li>Sınav Saati uygulaması</li>
+              <li>Admin Şifresi: 5894svs</li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="download-btn" aria-label="Windows 10 indir">
+              <i class="bi bi-download"></i> Windows 10
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="deepfreeze-btn" aria-label="DeepFreeze ile Windows 10 indir">
+              <i class="bi bi-shield-lock"></i> DF Win10
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="download-btn" aria-label="Windows 11 indir">
+              <i class="bi bi-download"></i> Windows 11
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="deepfreeze-btn" aria-label="DeepFreeze ile Windows 11 indir">
+              <i class="bi bi-shield-lock"></i> DF Win11
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 - Arçelik -->
+        <div class="card" tabindex="0">
+          <h2><i class="bi bi-display"></i> Arçelik Siyah Tahta</h2>
+          <a href="img/arceliksiyah.png" data-fancybox="gallery" data-caption="Arçelik Siyah Tahta">
+            <div class="card-image">
+              <img src="img/arceliksiyah.png" alt="Arçelik Siyah Tahta" loading="lazy">
+            </div>
+          </a>
+          <div class="features">
+            <div class="features-title"><i class="bi bi-list-check"></i> Özellikler</div>
+            <ul>
+              <li>Windows 10/11 Pro (anahtarlı)</li>
+              <li>Driverlar kurulu ve optimize</li>
+              <li>Office 2013 Anahtarlı</li>
+              <li>Reklam engelleyici Chrome</li>
+              <li>Fatih Kalem ve Antropi Teach</li>
+              <li>Sınav Saati uygulaması</li>
+              <li>Admin Şifresi: 5894svs</li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="download-btn" aria-label="Windows 10 indir">
+              <i class="bi bi-download"></i> Windows 10
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="deepfreeze-btn" aria-label="DeepFreeze ile Windows 10 indir">
+              <i class="bi bi-shield-lock"></i> DF Win10
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="download-btn" aria-label="Windows 11 indir">
+              <i class="bi bi-download"></i> Windows 11
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="deepfreeze-btn" aria-label="DeepFreeze ile Windows 11 indir">
+              <i class="bi bi-shield-lock"></i> DF Win11
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4 - Aidata -->
+        <div class="card" tabindex="0">
+          <h2><i class="bi bi-display"></i> Aidata Akıllı Tahta</h2>
+          <a href="img/arceliksiyah.png" data-fancybox="gallery" data-caption="Aidata Akıllı Tahta">
+            <div class="card-image">
+              <img src="img/arceliksiyah.png" alt="Aidata Akıllı Tahta" loading="lazy">
+            </div>
+          </a>
+          <div class="features">
+            <div class="features-title"><i class="bi bi-list-check"></i> Özellikler</div>
+            <ul>
+              <li>Windows 10/11 Pro (anahtarlı)</li>
+              <li>Driverlar kurulu ve optimize</li>
+              <li>Office 2013 Anahtarlı</li>
+              <li>Reklam engelleyici Chrome</li>
+              <li>Fatih Kalem ve Antropi Teach</li>
+              <li>Sınav Saati uygulaması</li>
+              <li>Admin Şifresi: 5894svs</li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="download-btn" aria-label="Windows 10 indir">
+              <i class="bi bi-download"></i> Windows 10
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="deepfreeze-btn" aria-label="DeepFreeze ile Windows 10 indir">
+              <i class="bi bi-shield-lock"></i> DF Win10
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="download-btn" aria-label="Windows 11 indir">
+              <i class="bi bi-download"></i> Windows 11
+            </a>
+            <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
+              target="_blank" class="deepfreeze-btn" aria-label="DeepFreeze ile Windows 11 indir">
+              <i class="bi bi-shield-lock"></i> DF Win11
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </main>
+
+  <!-- USB Önerisi Modal -->
+<div class="modal fade" id="usbModal" tabindex="-1" aria-labelledby="usbModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="usbModalLabel">
+          <i class="bi bi-usb-drive"></i> USB Önerisi
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-4">Aşağıda test edilmiş, önerilen USB bellekleri görebilirsiniz:</p>
+
+        <!-- Kart 1 -->
+        <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
+          <a href="img/Flash bellekler/Kingston 3.2 flash bellek.png" data-fancybox="usbGallery" data-caption="Kingston Exodia">
+            <img src="img/Flash bellekler/Kingston 3.2 flash bellek.png" alt="Kingston" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
+          </a>
+          <div>
+            <h6>Kingston DataTraveler Exodia</h6>
+            <ul>
+              <li>Kurulum Süresi: 15–20 dakika</li>
+              <li>Öneri: ⭐⭐⭐⭐⭐</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Kart 2 -->
+        <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
+          <a href="img/Flash bellekler/Sandisk 3.0 flash bellek.png" data-fancybox="usbGallery" data-caption="SanDisk Glide">
+            <img src="img/Flash bellekler/Sandisk 3.0 flash bellek.png" alt="SanDisk Glide" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
+          </a>
+          <div>
+            <h6>SanDisk 16 GB Cruzer Glide</h6>
+            <ul>
+              <li>Kurulum Süresi: 15–20 dakika</li>
+              <li>Öneri: ⭐⭐⭐⭐⭐</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Kart 3 -->
+        <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
+          <a href="img/Flash bellekler/Kioxia Flash bellek.png" data-fancybox="usbGallery" data-caption="Kioxia">
+            <img src="img/Flash bellekler/Kioxia Flash bellek.png" alt="Kioxia" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
+          </a>
+          <div>
+            <h6>Kioxia Transmemory 16GB</h6>
+            <ul>
+              <li>Kurulum Süresi: 45–50 dakika</li>
+              <li>Öneri: ⭐⭐⭐</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Kart 4 -->
+        <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
+          <a href="img/Flash bellekler/Sandisk Flash bellek.png" data-fancybox="usbGallery" data-caption="SanDisk Diğer">
+            <img src="img/Flash bellekler/Sandisk Flash bellek.png" alt="SanDisk Flash" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
+          </a>
+          <div>
+            <h6>SanDisk 16 GB Cruzer Glide (Diğer Model)</h6>
+            <ul>
+              <li>Kurulum Süresi: 45–50 dakika</li>
+              <li>Öneri: ⭐⭐</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bilgilendirme -->
+        <p class="mt-4 fw-bold fs-5" style="color: var(--accent);">
+          ⚠️ Not: USB 3.0 bellekler (USB içi Mavi)kurulumda çok daha hızlıdır. USB 2.0 bellekler de kullanılabilir ancak önerilmez.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Installation Modal -->
+  <div class="modal fade" id="installModal" tabindex="-1" aria-labelledby="installModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content " style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="installModalLabel"><i class="bi bi-download"></i> Nasıl Kurulur?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Modali kapat"></button>
+        </div>
+        <div class="modal-body">
+          <div class="ratio ratio-16x9 mt-3">
+            <iframe src="https://www.youtube.com/embed/Rxc1QU4z4jw" title="Akıllı Tahta Kurulum Rehberi"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <!--<div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Bize Ulaşın</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Modali kapat"></button>
+        </div>
+        <div class="modal-body">
+          <form id="contactForm">
+            <input type="text" name="name" placeholder="Adınız" required aria-label="Adınız">
+            <input type="email" name="email" placeholder="E-posta Adresiniz" required aria-label="E-posta adresiniz">
+            <textarea name="message" placeholder="Mesajınız" rows="4" required aria-label="Mesajınız"></textarea>
+            <button type="submit">Gönder</button>
+          </form>
+        </div>-->
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel">Bize Ulaşın</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Modali kapat"></button>
+        </div>
+        <div class="modal-body">
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="7587c520-de63-4305-aacc-90853cad5c74">
+            <!-- Form Inputs. Each input must have a name="" attribute -->
+            <input type="text" name="name" placeholder="Adınız" required aria-label="Adınız" required>
+            <input type="email" name="email" placeholder="E-posta Adresiniz" required aria-label="E-posta adresiniz"required>
+            <textarea name="message" placeholder="Mesajınız" rows="4" required aria-label="Mesajınız"
+              required></textarea>
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <button type="submit">Gönder</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Hakkımızda Modal -->
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aboutModalLabel">
+          <i class="bi bi-info-circle-fill"></i> Hakkımızda
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Bu proje, Türkiye'deki okullarda kullanılan Vestel, Arçelik ve Aidata marka akıllı tahtalar için temiz,
+          güncel ve hızlı çalışan Windows imajları sunmak için hazırlanmıştır.
+        </p>
+
+        <h6 class="mt-3">
+          <i class="bi bi-stars"></i> Destek Verenler
+        </h6>
+        <ul>
+          <li><strong>Orkun Tarlacı</strong> – Geliştirici & Kurulum Sorumlusu</li>
+          <li><strong>Emir Arda Ketik</strong> – Bilişim Teknolojileri Öğrencisi</li>
+          <li><strong>Furkan Coşkun</strong> – Bilişim Teknolojileri Öğrencisi</li>
+          <li><strong>Hüseyin Tatar</strong> – Bilişim Teknolojileri Öğretmeni</li>
+          <li><strong>Serhan Kılıçak</strong> – Bilişim Teknolojileri Bölüm Başkanı</li>
+          <li><strong>Ersin Saruhan</strong> – Bilişim Teknolojileri IT Sorumlusu</li>
+          
+        </ul>
+
+        <h6 class="mt-3">
+          <i class="bi bi-envelope-at-fill"></i> İletişim
+        </h6>
+        <p>
+          <a href="mailto:orkuntarlaci@gmail.com" class="text-decoration-none" style="color: var(--accent);">
+            orkuntarlaci@gmail.com
+          </a>
+        </p>
+        <p>
+          <a href="tel:+905523875272" class="text-decoration-none" style="color: var(--accent);">
+            0552 387 5272
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- SSS Modal -->
+<div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-center w-100" id="faqModalLabel">
+          <i class="bi bi-question-circle-fill"></i> Sıkça Sorulan Sorular
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="accordion" id="faqAccordion">
+          <!-- Soru Template -->
+          <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                İmajı hangi programla yazdırmalıyım?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white">
+                Rufus ile acronis programını yazacaksınız sonrası sürükle bırak.
+              </div>
+            </div>
+          </div>
+
+          <!-- Diğer Sorular Aynı Şekilde -->
+          <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                BIOS ayarlarında neyi değiştirmeliyim?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white">
+                Bios ayarlarını değiştirmeye hiç gerek yok. Kurulum videosunda anlattığım gibi F7 yani boot menü ile işlem yapacağız
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                İmaj dosyasını açamıyorum, ne yapmalıyım?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white">
+                imaj dosyasını ilk olarak RAR dan çıkartıp nasıl kurulur adlı yerden de gerekli flash bellek yazılımlarını almanız lazım.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                Admin ve Deep Frezze şifresi nedir?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white">
+                5894svs
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                Kurulumdan sonra tahtada internet yoksa?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white">
+                Wi-Fi sürücüsü eksik olabilir. Driver klasöründen manuel kurmanız yeterlidir. Ama bu imajlarda genellikle internet otomatik gelir.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!--Footer -->
+  <footer id="contact">
+    <div class="container">
+      <p>© 2025 Akıllı Tahta İmajları - Orkun Tarlacı</p>
+      <div class="mt-3">
+        <a href="mailto:iletisim@ornek.com" class="text-decoration-none me-3">
+          <i class="bi bi-envelope"></i> İletişim
+        </a>
+        <a href="#" class="text-decoration-none">
+          <i class="bi bi-shield-check"></i> Gizlilik Politikası
+        </a>
+      </div>
+      <div class="footer-social">
+        
+        <a href="https://instagram.com" target="_blank" data-tooltip="Instagram" aria-label="Instagram"><i
+            class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    // Utility Functions
+    const utils = {
+      toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const icon = document.querySelector('#themeToggle i');
+        if (document.body.classList.contains('light-mode')) {
+          icon.classList.replace('bi-moon-stars', 'bi-sun');
+          localStorage.setItem('theme', 'light');
+        } else {
+          icon.classList.replace('bi-sun', 'bi-moon-stars');
+          localStorage.setItem('theme', 'dark');
+        }
+      },
+
+      scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      },
+
+      showLoading(button) {
+        button.classList.add('btn-loading');
+      },
+
+      hideLoading(button) {
+        button.classList.remove('btn-loading');
+      },
+
+      handleContactForm() {
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData);
+          console.log('Form Data:', data);
+          Swal.fire('Mesaj Gönderildi!', 'En kısa sürede size geri döneceğiz.', 'success');
+          form.reset();
+          bootstrap.Modal.getInstance(document.getElementById('contactModal')).hide();
+        });
+      }
+    };
+
+    // Event Listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Fancybox
+      Fancybox.bind("[data-fancybox]", {});
+
+      // Theme Toggle
+      const themeToggle = document.getElementById('themeToggle');
+      themeToggle.addEventListener('click', utils.toggleTheme);
+
+      // Scroll to Top
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      scrollTopBtn.addEventListener('click', utils.scrollToTop);
+
+      // Check Theme Preference
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+        themeToggle.innerHTML = '<i class="bi bi-sun"></i>';
+      }
+
+      // Show/Hide Scroll to Top Button and Navbar Scroll Effect
+      window.addEventListener('scroll', () => {
+        scrollTopBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+      });
+
+      // Button Loading Animation and Redirect
+      document.querySelectorAll('.download-btn, .deepfreeze-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault(); // Prevent default navigation
+          const url = btn.getAttribute('href'); // Get the URL from href
+          utils.showLoading(btn); // Show loading animation
+          setTimeout(() => {
+            utils.hideLoading(btn); // Hide loading animation
+            window.open(url, '_blank'); // Open link in new tab after delay
+          }, 1500);
+        });
+      });
+
+      // Reset YouTube Video on Modal Close
+      const installModal = document.getElementById('installModal');
+      if (installModal) {
+        installModal.addEventListener('hidden.bs.modal', () => {
+          const iframe = document.querySelector('#installModal iframe');
+          if (iframe) iframe.src = iframe.src;
+        });
+      }
+
+      // Initialize Contact Form
+      utils.handleContactForm();
+    });
+
+    
+  </script>
+</body>
+
+</html>
