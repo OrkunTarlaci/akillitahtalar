@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Vestel ve Arçelik akıllı tahtalar için güncel Windows imajları">
-  <title>Akıllı Tahta Kurukumu | Vestel, Arçelik & Aidata</title>
+  <title>Akıllı Tahta İmajları | Vestel & Arçelik</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -674,6 +674,14 @@
 }
 
 
+@media (min-width: 769px) and (max-width: 1500px) {
+    .card-container {
+        grid-template-columns: repeat(2, 350px);
+        max-width: 100%;
+        padding: 2rem 1rem;
+    }
+}
+
   </style>
 </head>
 
@@ -767,6 +775,7 @@
               <li>Admin Şifresi: 5894svs</li>
             </ul>
           </div>
+          
           <div class="btn-group">
             <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
               target="_blank" class="download-btn" aria-label="Windows 10 indir">
@@ -992,13 +1001,18 @@
 
   <!-- Installation Modal -->
   <div class="modal fade" id="installModal" tabindex="-1" aria-labelledby="installModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content " style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
         <div class="modal-header">
           <h5 class="modal-title" id="installModalLabel"><i class="bi bi-download"></i> Nasıl Kurulur?</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Modali kapat"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body d-flex gap-3">
+          <div class="ratio ratio-16x9 mt-3">
+            <iframe src="https://www.youtube.com/embed/Rxc1QU4z4jw" title="Akıllı Tahta Kurulum Rehberi"
+              allowfullscreen>
+            </iframe>
+          </div>
           <div class="ratio ratio-16x9 mt-3">
             <iframe src="https://www.youtube.com/embed/Rxc1QU4z4jw" title="Akıllı Tahta Kurulum Rehberi"
               allowfullscreen>
@@ -1074,7 +1088,8 @@
         <ul>
           <li><strong>Orkun Tarlacı</strong> – Geliştirici & Kurulum Sorumlusu</li>
           <li><strong>Emir Arda Ketik</strong> – Bilişim Teknolojileri Öğrencisi</li>
-          <li><strong>Furkan Coşkun</strong> – Bilişim Teknolojileri Öğrencisi - Kurulum Yardımısı</li>
+          <li><strong>Furkan Coşkun</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
+          <li><strong>Elif Ceren Kurt</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
           <li><strong>Hüseyin Tatar</strong> – Bilişim Teknolojileri Öğretmeni</li>
           <li><strong>Serhan Kılıçak</strong> – Bilişim Teknolojileri Bölüm Başkanı</li>
           <li><strong>Ersin Saruhan</strong> – Bilişim Teknolojileri IT Sorumlusu</li>
@@ -1121,7 +1136,7 @@
             </h2>
             <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
               <div class="accordion-body text-white">
-                Rufus ile acronis programını yazacaksınız sonrası sürükle bırak.
+                Rufus, Ventoy veya Balena Etcher önerilir.
               </div>
             </div>
           </div>
