@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -350,7 +349,8 @@
     }
 
     .download-btn,
-    .deepfreeze-btn {
+    .deepfreeze-btn,
+    .df-info-btn {
       position: relative;
       border: none;
       padding: 0.8rem;
@@ -377,8 +377,14 @@
       color: white !important;
     }
 
+    .df-info-btn {
+      background-color: #ff6f61;
+      color: white !important;
+    }
+
     .download-btn:hover,
-    .deepfreeze-btn:hover {
+    .deepfreeze-btn:hover,
+    .df-info-btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
@@ -389,6 +395,16 @@
 
     .deepfreeze-btn:hover {
       background-color: #1c7ed6;
+    }
+
+    .df-info-btn:hover {
+      background-color: #e55a50;
+    }
+
+    /* DF Nedir Butonu için Ek Stil */
+    .df-info-btn.card-btn {
+      margin-top: 1rem;
+      width: 100%;
     }
 
     .btn-loading::after {
@@ -523,9 +539,8 @@
       border-radius: 15px;
       color: var(--fg);
       backdrop-filter: blur(8px);
-      background-color: rgba(20, 24, 31, 0.8); /* biraz şeffaf */
+      background-color: rgba(20, 24, 31, 0.8);
       border: 2px solid var(--accent);
-
     }
 
     .modal-header {
@@ -635,16 +650,14 @@
       .card {
         width: 100%;
         max-width: 500px;
-        /* Increased card width for tablets */
         margin: 0 auto;
       }
 
       .btn-group {
         grid-template-columns: 1fr 1fr;
-        /* Keep two buttons side by side on tablets */
       }
-      
     }
+
     .accordion-button {
       background-color: #1a1f27;
       color: var(--fg);
@@ -652,61 +665,52 @@
       border-radius: 10px !important;
       font-weight: 500;
       transition: background-color 0.3s ease;
-}
+    }
 
-.accordion-button:not(.collapsed) {
-  background-color: rgba(46, 204, 113, 0.1);
-  color: var(--accent);
-  box-shadow: none;
-}
+    .accordion-button:not(.collapsed) {
+      background-color: rgba(46, 204, 113, 0.1);
+      color: var(--accent);
+      box-shadow: none;
+    }
 
-.accordion-button::after {
-  filter: invert(1);
-}
+    .accordion-button::after {
+      filter: invert(1);
+    }
 
-.accordion-item {
-  background-color: transparent;
-  border: none;
-}
+    .accordion-item {
+      background-color: transparent;
+      border: none;
+    }
 
     .fancybox__container {
-  z-index: 12000 !important;
-}
+      z-index: 12000 !important;
+    }
 
-
-@media (min-width: 769px) and (max-width: 1500px) {
-    .card-container {
+    @media (min-width: 769px) and (max-width: 1500px) {
+      .card-container {
         grid-template-columns: repeat(2, 350px);
         max-width: 100%;
         padding: 2rem 1rem;
+      }
     }
-}
 
+    .navbar-toggler-icon {
+      background-image: url(img/bar.svg) !important;
+    }
 
-.navbar-toggler-icon {
-  background-image: url(img/bar.svg) !important;
-  
-}
+    .navbar-toggler {
+      border: 1px solid white !important;
+    }
 
-.navbar-toggler {
-  border: 1px solid white !important;
-  
-}
+    body.light-mode .navbar-toggler-icon {
+      background-image: var(--bs-navbar-toggler-icon-bg) !important;
+    }
 
-body.light-mode .navbar-toggler-icon {
-  
-  background-image: var(--bs-navbar-toggler-icon-bg) !important;
-  
-}
-
-body.light-mode .navbar-toggler {
-  border: 1px solid black !important;
-  
-}
-
+    body.light-mode .navbar-toggler {
+      border: 1px solid black !important;
+    }
   </style>
 </head>
-
 <body>
   <!-- Floating Buttons -->
   <button class="scroll-top" id="scrollTopBtn" aria-label="Sayfanın başına dön">
@@ -716,49 +720,47 @@ body.light-mode .navbar-toggler {
     <i class="bi bi-moon-stars"></i>
   </button>
 
- <!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <i class="bi bi-easel"></i> Akıllı Tahta
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü aç/kapat">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">
-            Hakkımızda
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#installModal">
-            <i class="bi bi-download me-1"></i> Nasıl Kurulur?
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
-            Tahtanız Yok Mu? - Bize Ulaşın
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#usbModal">
-            <i class="bi bi-usb-drive me-1"></i> USB Önerisi
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#faqModal">
-            <i class="bi bi-question-circle me-1"></i> SSS
-          </a>
-        </li>
-      </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-easel"></i> Akıllı Tahta
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü aç/kapat">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">
+              Hakkımızda
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#installModal">
+              <i class="bi bi-download me-1"></i> Nasıl Kurulur?
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
+              Aradığınız Yazılım Yok Mu? - Bize Ulaşın
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#usbModal">
+              <i class="bi bi-usb-drive me-1"></i> USB Önerisi
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#faqModal">
+              <i class="bi bi-question-circle me-1"></i> SSS
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-
-
+  </nav>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -788,12 +790,14 @@ body.light-mode .navbar-toggler {
           <div class="features">
             <div class="features-title"><i class="bi bi-list-check"></i> Özellikler</div>
             <ul>
-              <li>Windows 10/11 Pro (anahtarlı)</li>
-              <li>Driverlar kurulu ve optimize</li>
-              <li>Office 2013 Anahtarlı</li>
-              <li>Reklam engelleyici Chrome</li>
-              <li>Fatih Kalem ve Beyaz Yazı Tahtası</li>
-              <li>Sınav Saati uygulaması</li>
+              <li>• Windows 10/11 Pro (anahtarlı)</li>
+              <li>• Eksiksiz Driver</li>
+              <li>• Tamamen Optimize ve Hızlı</li>
+              <li>• Orijinal Office 2013 Tam Anahtarlı</li>
+              <li>• Deep Freeze (İsteğe Bağlı) </li>
+              <li>• Reklam engelleyici Chrome</li>
+              <li>• Fatih Kalem ve Beyaz Yazı Tahtası</li>
+              <li>• Sınav Saati uygulaması</li>
             </ul>
           </div>
           
@@ -815,6 +819,9 @@ body.light-mode .navbar-toggler {
               <i class="bi bi-shield-lock"></i> DF Win11
             </a>
           </div>
+          <a href="#" class="df-info-btn card-btn" data-bs-toggle="modal" data-bs-target="#dfInfoModal" aria-label="Deep Freeze nedir">
+            <i class="bi bi-info-circle"></i> DF Nedir
+          </a>
         </div>
 
         <!-- Card 2 - Vestel Gri -->
@@ -828,12 +835,14 @@ body.light-mode .navbar-toggler {
           <div class="features">
             <div class="features-title"><i class="bi bi-list-check"></i> Özellikler</div>
             <ul>
-              <li>Windows 10/11 Pro (anahtarlı)</li>
-              <li>Driverlar kurulu ve optimize</li>
-              <li>Office 2013 Anahtarlı</li>
-              <li>Reklam engelleyici Chrome</li>
-              <li>Fatih Kalem ve Beyaz Yazı Tahtası</li>
-              <li>Sınav Saati uygulaması</li>
+              <li>• Windows 10/11 Pro (anahtarlı)</li>
+              <li>• Eksiksiz Driver</li>
+              <li>• Tamamen Optimize ve Hızlı</li>
+              <li>• Orijinal Office 2013 Tam Anahtarlı</li>
+              <li>• Deep Freeze (İsteğe Bağlı) </li>
+              <li>• Reklam engelleyici Chrome</li>
+              <li>• Fatih Kalem ve Beyaz Yazı Tahtası</li>
+              <li>• Sınav Saati uygulaması</li>
             </ul>
           </div>
           <div class="btn-group">
@@ -854,6 +863,9 @@ body.light-mode .navbar-toggler {
               <i class="bi bi-shield-lock"></i> DF Win11
             </a>
           </div>
+          <a href="#" class="df-info-btn card-btn" data-bs-toggle="modal" data-bs-target="#dfInfoModal" aria-label="Deep Freeze nedir">
+            <i class="bi bi-info-circle"></i> DF Nedir
+          </a>
         </div>
 
         <!-- Card 3 - Arçelik -->
@@ -867,12 +879,14 @@ body.light-mode .navbar-toggler {
           <div class="features">
             <div class="features-title"><i class="bi bi-list-check"></i> Özellikler</div>
             <ul>
-              <li>Windows 10/11 Pro (anahtarlı)</li>
-              <li>Driverlar kurulu ve optimize</li>
-              <li>Office 2013 Anahtarlı</li>
-              <li>Reklam engelleyici Chrome</li>
-              <li>Fatih Kalem ve Beyaz Yazı Tahtası</li>
-              <li>Sınav Saati uygulaması</li>
+              <li>• Windows 10/11 Pro (anahtarlı)</li>
+              <li>• Eksiksiz Driver</li>
+              <li>• Tamamen Optimize ve Hızlı</li>
+              <li>• Orijinal Office 2013 Tam Anahtarlı</li>
+              <li>• Deep Freeze (İsteğe Bağlı) </li>
+              <li>• Reklam engelleyici Chrome</li>
+              <li>• Fatih Kalem ve Beyaz Yazı Tahtası</li>
+              <li>• Sınav Saati uygulaması</li>
             </ul>
           </div>
           <div class="btn-group">
@@ -893,6 +907,9 @@ body.light-mode .navbar-toggler {
               <i class="bi bi-shield-lock"></i> DF Win11
             </a>
           </div>
+          <a href="#" class="df-info-btn card-btn" data-bs-toggle="modal" data-bs-target="#dfInfoModal" aria-label="Deep Freeze nedir">
+            <i class="bi bi-info-circle"></i> DF Nedir
+          </a>
         </div>
 
         <!-- Card 4 - Aidata -->
@@ -906,12 +923,14 @@ body.light-mode .navbar-toggler {
           <div class="features">
             <div class="features-title"><i class="bi bi-list-check"></i> Özellikler</div>
             <ul>
-              <li>Windows 10/11 Pro (anahtarlı)</li>
-              <li>Driverlar kurulu ve optimize</li>
-              <li>Office 2013 Anahtarlı</li>
-              <li>Reklam engelleyici Chrome</li>
-              <li>Fatih Kalem ve Beyaz Yazı Tahtası</li>
-              <li>Sınav Saati uygulaması</li>
+              <li>• Windows 10/11 Pro (anahtarlı)</li>
+              <li>• Eksiksiz Driver</li>
+              <li>• Tamamen Optimize ve Hızlı</li>
+              <li>• Orijinal Office 2013 Tam Anahtarlı</li>
+              <li>• Deep Freeze (İsteğe Bağlı) </li>
+              <li>• Reklam engelleyici Chrome</li>
+              <li>• Fatih Kalem ve Beyaz Yazı Tahtası</li>
+              <li>• Sınav Saati uygulaması</li>
             </ul>
           </div>
           <div class="btn-group">
@@ -932,102 +951,136 @@ body.light-mode .navbar-toggler {
               <i class="bi bi-shield-lock"></i> DF Win11
             </a>
           </div>
+          <a href="#" class="df-info-btn card-btn" data-bs-toggle="modal" data-bs-target="#dfInfoModal" aria-label="Deep Freeze nedir">
+            <i class="bi bi-info-circle"></i> DF Nedir
+          </a>
         </div>
       </div>
     </div>
 
-    
+    <!-- Deep Freeze Info Modal -->
+    <div class="modal fade" id="dfInfoModal" tabindex="-1" aria-labelledby="dfInfoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+          <div class="modal-header">
+            <h5 class="modal-title" id="dfInfoModalLabel">
+              <i class="bi bi-shield-lock"></i> Deep Freeze Nedir?
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Deep Freeze, Faronics tarafından geliştirilen bir yazılımdır ve bilgisayar sistemlerini orijinal durumlarına geri döndürmek için kullanılır. Akıllı tahtalarda Deep Freeze kullanımı, sistemin her yeniden başlatıldığında başlangıçtaki temiz ve optimize edilmiş haline dönmesini sağlar. Bu, özellikle okullarda kullanılan cihazlarda, öğrencilerin veya kullanıcıların yaptığı değişikliklerin (dosya ekleme, silme, ayar değiştirme vb.) kalıcı olmasını engeller.
+            </ sols>
+            <h6 class="mt-3"><i class="bi bi-check-circle-fill"></i> Deep Freeze'in Avantajları</h6>
+            <ul>
+              <li>Sistemi virüslerden ve istenmeyen değişikliklerden korur.</li>
+              <li>Yazılım yüklemeleri veya sistem hataları sonrası cihazı ilk haline döndürür.</li>
+              <li>Bakım ve yönetim süreçlerini kolaylaştırır.</li>
+              <li>Akıllı tahtaların performansını korur ve uzun süreli kullanım sağlar.</li>
+            </ul>
+            <p class="mt-3">
+              Deep Freeze, "DF Win10" ve "DF Win11" imajlarımızda isteğe bağlı olarak sunulmaktadır. Kurulumdan sonra şifre ile korunan bu yazılım, yalnızca yetkili kişiler tarafından devre dışı bırakılabilir.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- USB Önerisi Modal -->
-<div class="modal fade" id="usbModal" tabindex="-1" aria-labelledby="usbModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
-      <div class="modal-header">
-        <h5 class="modal-title" id="usbModalLabel">
-          <i class="bi bi-usb-drive"></i> USB Önerisi
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
-      </div>
-      <div class="modal-body">
-        <p class="mb-4">Aşağıda test edilmiş, önerilen USB bellekleri görebilirsiniz:</p>
-
-        <!-- Kart 1 -->
-        <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
-          <a href="img/Flash bellekler/Kingston 3.2 flash bellek.png" data-fancybox="usbGallery" data-caption="Kingston Exodia">
-            <img src="img/Flash bellekler/Kingston 3.2 flash bellek.png" alt="Kingston" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
-          </a>
-          <div>
-            <h6>Kingston DataTraveler Exodia</h6>
-            <ul>
-              <li>Kurulum Süresi: 15–20 dakika</li>
-              <li>Öneri: ⭐⭐⭐⭐⭐</li>
-            </ul>
-          </div>
+  <div class="modal fade" id="usbModal" tabindex="-1" aria-labelledby="usbModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="usbModalLabel">
+            <i class="bi bi-usb-drive"></i> USB Önerisi
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
         </div>
+        <div class="modal-body">
+          <p class="mb-4">Aşağıda test edilmiş, önerilen USB bellekleri görebilirsiniz:</p>
 
-        <!-- Kart 2 -->
-        <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
-          <a href="img/Flash bellekler/Sandisk 3.0 flash bellek.png" data-fancybox="usbGallery" data-caption="SanDisk Glide">
-            <img src="img/Flash bellekler/Sandisk 3.0 flash bellek.png" alt="SanDisk Glide" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
-          </a>
-          <div>
-            <h6>SanDisk 16 GB Cruzer Glide</h6>
-            <ul>
-              <li>Kurulum Süresi: 15–20 dakika</li>
-              <li>Öneri: ⭐⭐⭐⭐⭐</li>
-            </ul>
+          <!-- Kart 1 -->
+          <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
+            <a href="img/Flash bellekler/Kingston 3.2 flash bellek.png" data-fancybox="usbGallery" data-caption="Kingston Exodia">
+              <img src="img/Flash bellekler/Kingston 3.2 flash bellek.png" alt="Kingston" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
+            </a>
+            <div>
+              <h6>Kingston DataTraveler Exodia</h6>
+              <ul>
+                <li>Kurulum Süresi: 15–20 dakika</li>
+                <li>Öneri: ⭐⭐⭐⭐⭐</li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <!-- Kart 3 -->
-        <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
-          <a href="img/Flash bellekler/Kioxia Flash bellek.png" data-fancybox="usbGallery" data-caption="Kioxia">
-            <img src="img/Flash bellekler/Kioxia Flash bellek.png" alt="Kioxia" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
-          </a>
-          <div>
-            <h6>Kioxia Transmemory 16GB</h6>
-            <ul>
-              <li>Kurulum Süresi: 45–50 dakika</li>
-              <li>Öneri: ⭐⭐⭐</li>
-            </ul>
+          <!-- Kart 2 -->
+          <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
+            <a href="img/Flash bellekler/Sandisk 3.0 flash bellek.png" data-fancybox="usbGallery" data-caption="SanDisk Glide">
+              <img src="img/Flash bellekler/Sandisk 3.0 flash bellek.png" alt="SanDisk Glide" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
+            </a>
+            <div>
+              <h6>SanDisk 16 GB Cruzer Glide</h6>
+              <ul>
+                <li>Kurulum Süresi: 15–20 dakika</li>
+                <li>Öneri: ⭐⭐⭐⭐⭐</li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <!-- Kart 4 -->
-        <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
-          <a href="img/Flash bellekler/Sandisk Flash bellek.png" data-fancybox="usbGallery" data-caption="SanDisk Diğer">
-            <img src="img/Flash bellekler/Sandisk Flash bellek.png" alt="SanDisk Flash" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
-          </a>
-          <div>
-            <h6>SanDisk 16 GB Cruzer Glide (Diğer Model)</h6>
-            <ul>
-              <li>Kurulum Süresi: 45–50 dakika</li>
-              <li>Öneri: ⭐⭐</li>
-            </ul>
+          <!-- Kart 3 -->
+          <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
+            <a href="img/Flash bellekler/Kioxia Flash bellek.png" data-fancybox="usbGallery" data-caption="Kioxia">
+              <img src="img/Flash bellekler/Kioxia Flash bellek.png" alt="Kioxia" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
+            </a>
+            <div>
+              <h6>Kioxia Transmemory 16GB</h6>
+              <ul>
+                <li>Kurulum Süresi: 45–50 dakika</li>
+                <li>Öneri: ⭐⭐⭐</li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <!-- Bilgilendirme -->
-        <p class="mt-4 fw-bold fs-5" style="color: var(--accent);">
-          ⚠️ Not: USB 3.0 bellekler (USB içi Mavi)kurulumda çok daha hızlıdır. USB 2.0 bellekler de kullanılabilir ancak önerilmez.
-        </p>
+          <!-- Kart 4 -->
+          <div class="d-flex align-items-start mb-4" style="gap: 1rem;">
+            <a href="img/Flash bellekler/Sandisk Flash bellek.png" data-fancybox="usbGallery" data-caption="SanDisk Diğer">
+              <img src="img/Flash bellekler/Sandisk Flash bellek.png" alt="SanDisk Flash" style="width: 125px; height: 125px; border-radius: 12px; object-fit: contain;">
+            </a>
+            <div>
+              <h6>SanDisk 16 GB Cruzer Glide (Diğer Model)</h6>
+              <ul>
+                <li>Kurulum Süresi: 45–50 dakika</li>
+                <li>Öneri: ⭐⭐</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Bilgilendirme -->
+          <p class="mt-4 fw-bold fs-5" style="color: var(--accent);">
+            ⚠️Kurulum işlemi için USB 3.0 bellekler (içi mavi olanlar) çok daha hızlı çalışır ve tavsiye edilir.
+            USB 2.0 bellekler (içi siyah ya da kırmızı olanlar) da kullanılabilir, ancak kurulum süresi çok uzar ve bu nedenle önerilmez.
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <!-- Installation Modal -->
   <div class="modal fade" id="installModal" tabindex="-1" aria-labelledby="installModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content " style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
         <div class="modal-header">
           <h5 class="modal-title" id="installModalLabel"><i class="bi bi-download"></i> Nasıl Kurulur?</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Modali kapat"></button>
         </div>
         <div class="modal-body d-flex gap-3">
           <div class="ratio ratio-16x9 mt-3">
-            <iframe src="https://www.youtube.com/embed/Rxc1QU4z4jw" title="Akıllı Tahta Kurulum Rehberi"
+            <iframe src="https://www.youtube.com/watch?v=jJiNK7KdP_4" title="Akıllı Tahta Kurulum Rehberi"
               allowfullscreen>
             </iframe>
           </div>
@@ -1039,7 +1092,6 @@ body.light-mode .navbar-toggler {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
-          
         </div>
       </div>
     </div>
@@ -1048,19 +1100,6 @@ body.light-mode .navbar-toggler {
   <!-- Contact Modal -->
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <!--<div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="contactModalLabel">Bize Ulaşın</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Modali kapat"></button>
-        </div>
-        <div class="modal-body">
-          <form id="contactForm">
-            <input type="text" name="name" placeholder="Adınız" required aria-label="Adınız">
-            <input type="email" name="email" placeholder="E-posta Adresiniz" required aria-label="E-posta adresiniz">
-            <textarea name="message" placeholder="Mesajınız" rows="4" required aria-label="Mesajınız"></textarea>
-            <button type="submit">Gönder</button>
-          </form>
-        </div>-->
       <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
         <div class="modal-header">
           <h5 class="modal-title" id="contactModalLabel">Bize Ulaşın</h5>
@@ -1068,14 +1107,10 @@ body.light-mode .navbar-toggler {
         </div>
         <div class="modal-body">
           <form action="https://api.web3forms.com/submit" method="POST">
-            <!-- Replace with your Access Key -->
             <input type="hidden" name="access_key" value="7587c520-de63-4305-aacc-90853cad5c74">
-            <!-- Form Inputs. Each input must have a name="" attribute -->
             <input type="text" name="name" placeholder="Adınız" required aria-label="Adınız" required>
-            <input type="email" name="email" placeholder="E-posta Adresiniz" required aria-label="E-posta adresiniz"required>
-            <textarea name="message" placeholder="Mesajınız" rows="4" required aria-label="Mesajınız"
-              required></textarea>
-            <!-- Honeypot Spam Protection -->
+            <input type="email" name="email" placeholder="E-posta Adresiniz" required aria-label="E-posta adresiniz" required>
+            <textarea name="message" placeholder="Mesajınız" rows="4" required aria-label="Mesajınız" required></textarea>
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
             <button type="submit">Gönder</button>
           </form>
@@ -1084,156 +1119,139 @@ body.light-mode .navbar-toggler {
     </div>
   </div>
 
-<!-- Hakkımızda Modal -->
-<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
-      <div class="modal-header">
-        <h5 class="modal-title" id="aboutModalLabel">
-          <i class="bi bi-info-circle-fill"></i> Hakkımızda
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
-      </div>
-      <div class="modal-body">
-        <p>
-          Bu proje, Türkiye'deki okullarda kullanılan Vestel, Arçelik ve Aidata marka akıllı tahtalar için temiz,
-          güncel ve hızlı çalışan Windows imajları sunmak için hazırlanmıştır.
-        </p>
-
-        <h6 class="mt-3">
-          <i class="bi bi-stars"></i> Destek Verenler
-        </h6>
-        <ul>
-          <li><strong>Orkun Tarlacı</strong> – Geliştirici & Kurulum Sorumlusu</li>
-          <li><strong>Emir Arda Ketik</strong> – Bilişim Teknolojileri Öğrencisi</li>
-          <li><strong>Furkan Coşkun</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
-          <li><strong>Mustafa Yalçın</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
-          <li><strong>Hüseyin Tatar</strong> – Bilişim Teknolojileri Öğretmeni</li>
-          <li><strong>Serhan Kılıçak</strong> – Bilişim Teknolojileri Bölüm Başkanı</li>
-          <li><strong>Ersin Saruhan</strong> – Bilişim Teknolojileri IT Sorumlusu</li>
-          
-        </ul>
-
-        <h6 class="mt-3">
-          <i class="bi bi-envelope-at-fill"></i> İletişim
-        </h6>
-        <p>
-          <a href="mailto:orkuntarlaci@gmail.com" class="text-decoration-none" style="color: var(--accent);">
-            orkuntarlaci@gmail.com
-          </a>
-        </p>
-        <p>
-          <a href="tel:+905523875272" class="text-decoration-none" style="color: var(--accent);">
-            0552 387 5272
-          </a>
-        </p>
+  <!-- Hakkımızda Modal -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="aboutModalLabel">
+            <i class="bi bi-info-circle-fill"></i> Hakkımızda
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Bu proje, Türkiye'deki okullarda kullanılan Vestel, Arçelik ve Aidata marka akıllı tahtalar için temiz,
+            güncel ve hızlı çalışan Windows imajları sunmak için hazırlanmıştır.
+          </p>
+          <h6 class="mt-3">
+            <i class="bi bi-stars"></i> Destek Verenler
+          </h6>
+          <ul>
+            <li><strong>Orkun Tarlacı</strong> – Geliştirici & Kurulum Sorumlusu</li>
+            <li><strong>Emir Arda Ketik</strong> – Bilişim Teknolojileri Öğrencisi</li>
+            <li><strong>Furkan Coşkun</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
+            <li><strong>Mustafa Yalçın</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
+            <li><strong>Hüseyin Tatar</strong> – Bilişim Teknolojileri Öğretmeni</li>
+            <li><strong>Serhan Kılıçak</strong> – Bilişim Teknolojileri Bölüm Başkanı</li>
+            <li><strong>Ersin Saruhan</strong> – Bilişim Teknolojileri IT Sorumlusu</li>
+          </ul>
+          <h6 class="mt-3">
+            <i class="bi bi-envelope-at-fill"></i> İletişim
+          </h6>
+          <p>
+            <a href="mailto:orkuntarlaci@gmail.com" class="text-decoration-none" style="color: var(--accent);">
+              orkuntarlaci@gmail.com
+            </a>
+          </p>
+          <p>
+            <a href="tel:+905523875272" class="text-decoration-none" style="color: var(--accent);">
+              0552 387 5272
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
- 
-<!-- SSS Modal -->
-<div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
-      <div class="modal-header border-0">
-        <h5 class="modal-title text-center w-100" id="faqModalLabel">
-          <i class="bi bi-question-circle-fill"></i> Sıkça Sorulan Sorular
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
-      </div>
-      <div class="modal-body">
 
-        <div class="accordion" id="faqAccordion">
-          <!-- Soru Template -->
-          <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                İmajı hangi programla yazdırmalıyım?
-              </button>
-            </h2>
-            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-white">
-                Nasıl kuurlur içindeki Güncel Akıllı Tahta Flash Bellek Hazırlama videosunda gerekli adımlar var.
+  <!-- SSS Modal -->
+  <div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-center w-100" id="faqModalLabel">
+            <i class="bi bi-question-circle-fill"></i> Sıkça Sorulan Sorular
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
+        <div class="modal-body">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  İmajı hangi programla yazdırmalıyım?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-white">
+                  Nasıl kuurlur içindeki Güncel Akıllı Tahta Flash Bellek Hazırlama videosunda gerekli adımlar vardır rahatlıkla kurabilirsiniz.
+                </div>
               </div>
             </div>
-          </div>
-
-          <!-- Diğer Sorular Aynı Şekilde -->
-          <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                BIOS ayarlarında neyi değiştirmeliyim?
-              </button>
-            </h2>
-            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-white">
-                Bios ayarlarını değiştirmeye hiç gerek yok. Kurulum videosunda anlattığım gibi F7 yani boot menü ile işlem yapacağız
+            <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  BIOS ayarlarında neyi değiştirmeliyim?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-white">
+                  Bios ayarlarını değiştirmeye hiç gerek yok. Kurulum videosunda anlattığım gibi F7 yani boot menü ile işlem yapacağız
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                İmaj dosyasını açamıyorum, ne yapmalıyım?
-              </button>
-            </h2>
-            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-white">
-                imaj dosyasını ilk olarak RAR dan çıkartıp nasıl kurulur adlı yerden de gerekli flash bellek yazılımlarını almanız lazım.
+            <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  İmaj dosyasını açamıyorum, ne yapmalıyım?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-white">
+                  imaj dosyasını ilk olarak RAR dan çıkartıp nasıl kurulur adlı yerden de gerekli flash bellek yazılımlarını almanız lazım.
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                Admin ve Deep Frezze şifresi nedir?
-              </button>
-            </h2>
-            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-white">
-                5894svs
+            <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Admin ve Deep Frezze şifresi nedir?
+                </button>
+              </h2>
+              <div id="faq ctrd4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-white">
+                  5894svs
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                Kurulumdan sonra tahtada internet yoksa?
-              </button>
-            </h2>
-            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body text-white">
-                Wi-Fi sürücüsü eksik olabilir. Driver klasöründen manuel kurmanız yeterlidir. Ama bu imajlarda genellikle internet otomatik gelir.
+            <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                  Kurulumdan sonra tahtada internet yoksa?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-white">
+                  Wi-Fi sürücüsü eksik olabilir. Driver klasöründen manuel kurmanız yeterlidir. Ama bu imajlarda genellikle internet otomatik gelir.
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-</div>
 
-  <!--Footer -->
+  <!-- Footer -->
   <footer id="contact">
     <div class="container">
       <p>© 2025 Akıllı Tahta İmajları - Orkun Tarlacı</p>
       <div class="mt-3">
-        <a href="mailto:iletisim@ornek.com" class="text-decoration-none me-3">
-          <i class="bi bi-envelope"></i> İletişim
-        </a>
         <a href="#" class="text-decoration-none">
           <i class="bi bi-shield-check"></i> Gizlilik Politikası
         </a>
       </div>
-      <div class="footer-social">
-        
-        
-      </div>
+      <div class="footer-social"></div>
     </div>
   </footer>
 
@@ -1315,12 +1333,12 @@ body.light-mode .navbar-toggler {
       // Button Loading Animation and Redirect
       document.querySelectorAll('.download-btn, .deepfreeze-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-          e.preventDefault(); // Prevent default navigation
-          const url = btn.getAttribute('href'); // Get the URL from href
-          utils.showLoading(btn); // Show loading animation
+          e.preventDefault();
+          const url = btn.getAttribute('href');
+          utils.showLoading(btn);
           setTimeout(() => {
-            utils.hideLoading(btn); // Hide loading animation
-            window.open(url, '_blank'); // Open link in new tab after delay
+            utils.hideLoading(btn);
+            window.open(url, '_blank');
           }, 1500);
         });
       });
@@ -1337,9 +1355,6 @@ body.light-mode .navbar-toggler {
       // Initialize Contact Form
       utils.handleContactForm();
     });
-
-    
   </script>
 </body>
-
 </html>
