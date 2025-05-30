@@ -92,16 +92,15 @@
       transform: translateY(-2px);
     }
 
-    /* Navbar Toggler Icon (Üç Beyaz Çizgi - Kare Şeklinde) */
     .navbar-toggler {
       border: 1px solid white !important;
     }
 
     .navbar-toggler-icon {
-      width: 24px; /* Kare yapmak için width ve height eşitleniyor */
+      width: 24px;
       height: 24px;
       position: relative;
-      background-image: none !important; /* SVG kullanımını iptal */
+      background-image: none !important;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -113,7 +112,7 @@
       content: '';
       height: 3px;
       width: 100%;
-      background-color: white; /* Çizgiler beyaz */
+      background-color: white;
       border-radius: 2px;
       position: absolute;
     }
@@ -483,54 +482,11 @@
     }
 
     /* Footer */
-    .footer-social {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      position: relative;
-    }
-
-    .footer-social a {
-      color: var(--fg);
-      font-size: 1.5rem;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .footer-social a:hover {
-      color: var(--accent);
-      transform: translateY(-3px);
-    }
-
-    .footer-social a::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: var(--accent);
-      color: white;
-      padding: 0.3rem 0.6rem;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-    }
-
-    .footer-social a:hover::after {
-      opacity: 1;
-      visibility: visible;
-      bottom: 120%;
-    }
-
     footer {
       background-color: var(--card-bg);
       color: var(--fg);
       text-align: center;
-      padding: 3rem 0;
+      padding: 3rem 1rem;
       margin-top: 3rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
@@ -552,7 +508,6 @@
       color: var(--fg);
       backdrop-filter: blur(8px);
       background-color: rgba(20, 24, 31, 0.8);
-      border: 2px solid var(--accent);
     }
 
     .modal-header {
@@ -705,66 +660,65 @@
       }
     }
 
- .contact-box {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-}
+    .contact-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
 
-.contact-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 0.8rem 1rem;
-  border-radius: 10px;
-  gap: 0.75rem;
-}
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      gap: 0.75rem;
+    }
 
-.contact-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  flex: 1;
-  min-width: 0; /* overflow için */
-}
+    .contact-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      flex: 1;
+      min-width: 0;
+    }
 
-.contact-label {
-  font-weight: 600;
-  color: var(--accent);
-  white-space: nowrap;
-}
+    .contact-label {
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+    }
 
-.contact-value {
-  color: var(--fg);
-  word-break: break-word;
-  flex-shrink: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+    .contact-value {
+      color: var(--fg);
+      word-break: break-word;
+      flex-shrink: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
-.copy-btn {
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  padding: 0.5rem 0.7rem;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-  flex-shrink: 0;
-}
+    .copy-btn {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 0.7rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
 
-.copy-btn:hover {
-  background-color: var(--accent-hover);
-}
-
+    .copy-btn:hover {
+      background-color: var(--accent-hover);
+    }
   </style>
 </head>
 <body>
@@ -824,10 +778,11 @@
   <section class="hero">
     <div class="container">
       <h1 class="animate__animated animate__fadeInDown">
-      Güncel Akıllı Tahta İmajları
+        Güncel Akıllı Tahta İmajları
       </h1>
-      <p class="animate__animated animate__fadeIn animate__delay-1s">Hiçbir gereksiz uygulaması olmayan temiz ve hızlı
-        Akıllı Tahta imajları</p>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">
+        Hiçbir gereksiz uygulaması olmayan temiz ve hızlı Akıllı Tahta imajları
+      </p>
       <a href="#products" class="start-btn mt-4 animate__animated animate__fadeInUp animate__delay-1s">
         <i class="bi bi-arrow-down"></i> Başla
       </a>
@@ -855,13 +810,12 @@
               <li>• Eksiksiz Driver</li>
               <li>• Tamamen Optimize ve Hızlı</li>
               <li>• Orijinal Office 2013 Tam Anahtarlı</li>
-              <li>• Deep Freeze (İsteğe Bağlı) </li>
+              <li>• Deep Freeze (İsteğe Bağlı)</li>
               <li>• Reklam engelleyicili Chrome</li>
               <li>• Fatih Kalem ve Beyaz Yazı Tahtası</li>
               <li>• Sınav Saati uygulaması</li>
             </ul>
           </div>
-          
           <div class="btn-group">
             <a href="https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link"
               target="_blank" class="download-btn" aria-label="Windows 10 indir">
@@ -900,7 +854,7 @@
               <li>• Eksiksiz Driver</li>
               <li>• Tamamen Optimize ve Hızlı</li>
               <li>• Orijinal Office 2013 Tam Anahtarlı</li>
-              <li>• Deep Freeze (İsteğe Bağlı) </li>
+              <li>• Deep Freeze (İsteğe Bağlı)</li>
               <li>• Reklam engelleyicili Chrome</li>
               <li>• Fatih Kalem ve Beyaz Yazı Tahtası</li>
               <li>• Sınav Saati uygulaması</li>
@@ -944,7 +898,7 @@
               <li>• Eksiksiz Driver</li>
               <li>• Tamamen Optimize ve Hızlı</li>
               <li>• Orijinal Office 2013 Tam Anahtarlı</li>
-              <li>• Deep Freeze (İsteğe Bağlı) </li>
+              <li>• Deep Freeze (İsteğe Bağlı)</li>
               <li>• Reklam engelleyicili Chrome</li>
               <li>• Fatih Kalem ve Beyaz Yazı Tahtası</li>
               <li>• Sınav Saati uygulaması</li>
@@ -988,7 +942,7 @@
               <li>• Eksiksiz Driver</li>
               <li>• Tamamen Optimize ve Hızlı</li>
               <li>• Orijinal Office 2013 Tam Anahtarlı</li>
-              <li>• Deep Freeze (İsteğe Bağlı) </li>
+              <li>• Deep Freeze (İsteğe Bağlı)</li>
               <li>• Reklam engelleyicili Chrome</li>
               <li>• Fatih Kalem ve Beyaz Yazı Tahtası</li>
               <li>• Sınav Saati uygulaması</li>
@@ -1159,98 +1113,96 @@
   </div>
 
   <!-- Contact Modal -->
-<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px; border: 2px solid var(--accent);">
-      <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel"><i class="bi bi-envelope"></i> Bize Ulaşın</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
-      </div>
-      <div class="modal-body">
-        <!-- Form -->
-        <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="7587c520-de63-4305-aacc-90853cad5c74">
-          <input type="text" name="name" placeholder="Adınız" required aria-label="Adınız">
-          <input type="email" name="email" placeholder="E-posta Adresiniz" required aria-label="E-posta Adresiniz">
-          <textarea name="message" placeholder="Mesajınız" rows="4" required aria-label="Mesajınız"></textarea>
-          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-          <button type="submit">Gönder</button>
-        </form>
-
-    <!-- Ekstra Kopyalama Kutuları -->
-<div class="contact-box mt-4">
-  <div class="contact-row">
-    <div class="contact-info">
-      <span class="contact-label">E-posta:</span>
-      <span class="contact-value" id="email">orkuntarlaci@gmail.com</span>
-    </div>
-    <button class="copy-btn" onclick="copyToClipboard('email')" aria-label="E-postayı kopyala">
-      <i class="bi bi-clipboard"></i>
-    </button>
-  </div>
-  <div class="contact-row">
-    <div class="contact-info">
-      <span class="contact-label">Telefon:</span>
-      <span class="contact-value" id="phone">0552 387 5272</span>
-    </div>
-    <button class="copy-btn" onclick="copyToClipboard('phone')" aria-label="Telefonu kopyala">
-      <i class="bi bi-clipboard"></i>
-    </button>
-  </div>
-</div>
-
-<!-- Hakkımızda Modal -->
-<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
-      <div class="modal-header">
-        <h5 class="modal-title" id="aboutModalLabel">
-          <i class="bi bi-info-circle-fill"></i> Hakkımızda
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
-      </div>
-      <div class="modal-body">
-        <p>
-          Bu proje, Türkiye'deki okullarda kullanılan Vestel, Arçelik ve Aidata marka akıllı tahtalar için temiz,
-          güncel ve hızlı çalışan Windows imajları sunmak için hazırlanmıştır.
-        </p>
-        <h6 class="mt-3">
-          <i class="bi bi-stars"></i> Destek Verenler
-        </h6>
-        <ul>
-          <li><strong>Orkun Tarlacı</strong> – Geliştirici & Kurulum Sorumlusu</li>
-          <li><strong>Emir Arda Ketik</strong> – Bilişim Teknolojileri Öğrencisi</li>
-          <li><strong>Furkan Coşkun</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
-          <li><strong>Mustafa Yalçın</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
-          <li><strong>Hüseyin Tatar</strong> – Bilişim Teknolojileri Öğretmeni</li>
-          <li><strong>Serhan Kılıçak</strong> – Bilişim Teknolojileri Bölüm Başkanı</li>
-        </ul>
-        <h6 class="mt-3">
-          <i class="bi bi-envelope-at-fill"></i> İletişim
-        </h6>
-
-        <div class="contact-box mt-3">
-          <div class="contact-row">
-            <span class="contact-label">E-posta:</span>
-            <span class="contact-value" id="email">orkuntarlaci@gmail.com</span>
-            <button class="copy-btn" onclick="copyToClipboard('email')" aria-label="E-postayı kopyala">
-              <i class="bi bi-clipboard"></i>
-            </button>
-          </div>
-          <div class="contact-row mt-2">
-            <span class="contact-label">Telefon:</span>
-            <span class="contact-value" id="phone">0552 387 5272</span>
-            <button class="copy-btn" onclick="copyToClipboard('phone')" aria-label="Telefonu kopyala">
-              <i class="bi bi-clipboard"></i>
-            </button>
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px; border: 2px solid var(--accent);">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel"><i class="bi bi-envelope"></i> Bize Ulaşın</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
+        <div class="modal-body">
+          <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+            <input type="hidden" name="access_key" value="7587c520-de63-4305-aacc-90853cad5c74">
+            <input type="text" name="name" placeholder="Adınız" required aria-label="Adınız">
+            <input type="email" name="email" placeholder="E-posta Adresiniz" required aria-label="E-posta Adresiniz">
+            <textarea name="message" placeholder="Mesajınız" rows="4" required aria-label="Mesajınız"></textarea>
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <button type="submit">Gönder</button>
+          </form>
+          <div class="contact-box mt-4">
+            <div class="contact-row">
+              <div class="contact-info">
+                <span class="contact-label">E-posta:</span>
+                <span class="contact-value" id="email">orkuntarlaci@gmail.com</span>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('email')" aria-label="E-postayı kopyala">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info">
+                <span class="contact-label">Telefon:</span>
+                <span class="contact-value" id="phone">0552 387 5272</span>
+              </div>
+              <button class="copy-btn" onclick="copyToClipboard('phone')" aria-label="Telefonu kopyala">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
           </div>
         </div>
-        
       </div>
     </div>
   </div>
-</div>
 
+  <!-- Hakkımızda Modal -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="aboutModalLabel">
+            <i class="bi bi-info-circle-fill"></i> Hakkımızda
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Bu proje, Türkiye'deki okullarda kullanılan Vestel, Arçelik ve Aidata marka akıllı tahtalar için temiz,
+            güncel ve hızlı çalışan Windows imajları sunmak için hazırlanmıştır.
+          </p>
+          <h6 class="mt-3">
+            <i class="bi bi-stars"></i> Destek Verenler
+          </h6>
+          <ul>
+            <li><strong>Orkun Tarlacı</strong> – Geliştirici & Kurulum Sorumlusu</li>
+            <li><strong>Emir Arda Ketik</strong> – Bilişim Teknolojileri Öğrencisi</li>
+            <li><strong>Furkan Coşkun</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
+            <li><strong>Mustafa Yalçın</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
+            <li><strong>Hüseyin Tatar</strong> – Bilişim Teknolojileri Öğretmeni</li>
+            <li><strong>Serhan Kılıçak</strong> – Bilişim Teknolojileri Bölüm Başkanı</li>
+          </ul>
+          <h6 class="mt-3">
+            <i class="bi bi-envelope-at-fill"></i> İletişim
+          </h6>
+          <div class="contact-box mt-3">
+            <div class="contact-row">
+              <span class="contact-label">E-posta:</span>
+              <span class="contact-value" id="email">orkuntarlaci@gmail.com</span>
+              <button class="copy-btn" onclick="copyToClipboard('email')" aria-label="E-postayı kopyala">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+            <div class="contact-row mt-2">
+              <span class="contact-label">Telefon:</span>
+              <span class="contact-value" id="phone">0552 387 5272</span>
+              <button class="copy-btn" onclick="copyToClipboard('phone')" aria-label="Telefonu kopyala">
+                <i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- SSS Modal -->
   <div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqModalLabel" aria-hidden="true">
@@ -1331,7 +1283,7 @@
   </div>
 
   <!-- Footer -->
-  <footer id="contact">
+  <footer id="footer">
     <div class="container">
       <p>© 2025 Akıllı Tahta İmajları - Orkun Tarlacı</p>
       <div class="mt-3">
@@ -1421,15 +1373,15 @@
       // Initialize Contact Form
       utils.handleContactForm();
     });
-function copyToClipboard(elementId) {
-    const text = document.getElementById(elementId).textContent;
-    navigator.clipboard.writeText(text).then(() => {
-      Swal.fire('Kopyalandı!', `"${text}" panoya kopyalandı.`, 'success');
-    }).catch(() => {
-      alert("Kopyalama işlemi başarısız oldu.");
-    });
-  }
 
+    function copyToClipboard(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        Swal.fire('Kopyalandı!', `"${text}" panoya kopyalandı.`, 'success');
+      }).catch(() => {
+        alert("Kopyalama işlemi başarısız oldu.");
+      });
+    }
   </script>
 </body>
 </html>
