@@ -149,7 +149,87 @@
     .copy-btn{background:var(--accent);color:#fff;border:none;padding:.5rem .7rem;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);flex-shrink:0}
     .copy-btn:hover{background:var(--accent-hover)}
 
-    /* === Kurulum Yaptığımız Okullar (tek kart, tamamen beyaz yazı) === */
+    /* === Misyon & Vizyon Bölümü === */
+    .mission-vision-section {
+      padding: 4rem 2rem;
+      max-width: 1520px;
+      margin: 0 auto;
+    }
+    .mission-vision-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
+    }
+    .mission-vision-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .mission-card, .vision-card {
+      background: var(--card-gradient);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      border: none;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .mission-card:hover, .vision-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 50px rgba(0,0,0,.6);
+    }
+    .mission-card::before, .vision-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      transition: var(--transition);
+    }
+    .mission-card h3, .vision-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .mission-card p, .vision-card p {
+      color: var(--fg);
+      opacity: .9;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .mission-card ul, .vision-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .mission-card li, .vision-card li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: .8rem;
+      color: var(--fg);
+      opacity: .9;
+    }
+    .mission-card li::before, .vision-card li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    /* === KURULUM YAPTIĞIMIZ OKULLAR (tek kart, tamamen beyaz yazı) === */
     .schools-section{padding:4rem 2rem;max-width:1520px;margin:0 auto}
     .schools-title{ text-align:center;font-size:2.2rem;margin-bottom:2rem;color:var(--accent);display:flex;align-items:center;justify-content:center;gap:.6rem }
     .school-card{background:var(--card-gradient);border-radius:20px;padding:2rem;box-shadow:var(--shadow);border:none;position:relative;overflow:hidden;max-width:900px;margin:0 auto}
@@ -200,6 +280,12 @@
     }
     
     @media (max-width:768px){
+      .mission-vision-container {
+        grid-template-columns: 1fr;
+      }
+      .mission-card, .vision-card {
+        padding: 1.5rem;
+      }
       .school-card{padding:1.5rem}
       .school-cover{height:200px}
       .gallery-accordion .accordion-body {
@@ -237,7 +323,28 @@
       <a href="#products" class="start-btn mt-4 animate__animated animate__fadeInUp animate__delay-1s"><i class="bi bi-arrow-down"></i> Başla</a>
     </div>
   </section>
-
+<!-- === MİSYON & VİZYON BÖLÜMÜ === -->
+    <section class="mission-vision-section">
+      <h2 class="mission-vision-title"><i class="bi bi-bullseye"></i> Misyon & Vizyon</h2>
+      <div class="mission-vision-container">
+        <div class="mission-card">
+          <h3><i class="bi bi-flag"></i> 🎯 MİSYON</h3>
+          <p>Türkiye'deki tüm akıllı tahtaları, her okulun kendi ihtiyaçlarına göre özel olarak optimize edilmiş, hızlı, güvenli ve kararlı yazılımlarla geliştirmek.</p>
+          <ul>
+            <li>Eski ve yavaş sistemleri modern hâle getirerek öğretmen ve öğrencilere sorunsuz, verimli ve kesintisiz bir ders deneyimi sunmak.</li>
+            <li>Kurulumdan yazılıma kadar tüm süreçte şeffaf, güvenilir ve teknik olarak doğru çözümler üretmek.</li>
+          </ul>
+        </div>
+        <div class="vision-card">
+          <h3><i class="bi bi-rocket-takeoff"></i> 🚀 VİZYON</h3>
+          <p>Türkiye'de akıllı tahta yazılım özelleştirmesinde standart imajların yerine okul bazlı özel yazılım dönemini başlatan lider proje olmak.</p>
+          <ul>
+            <li>Her okulun kimliğine, ihtiyaçlarına ve kullanım tarzına uygun tamamen kişiye/kuruma özgü akıllı tahta yazılımları geliştiren, ulusal ölçekte tanınan ve güvenilen bir teknoloji markası hâline gelmek.</li>
+            <li>Uzun vadede akıllı sınıf teknolojileri, kurumsal eğitim yazılımları ve yönetim altyapıları alanında ülke çapında referans olacak çözümler sunmak.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   <!-- Main -->
   <main id="products">
     <div class="container text-center py-5">
@@ -245,6 +352,8 @@
       <!-- KARTLAR JS ile üretilecek -->
       <div class="card-container" id="cards"></div>
     </div>
+
+    
 
     <!-- === KURULUM YAPTIĞIMIZ OKULLAR (tek kart) === -->
     <section class="schools-section">
@@ -261,7 +370,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
           </div>
           <div class="modal-body">
-            <p>Time Freeze bilgisayar sistemlerini orijinal durumlarına geri döndürmek için kullanılır. Akıllı tahtalarda Time Freeze kullanımı, sistemin her yeniden başlatıldığında başlangıçtaki temiz ve optimize edilmiş haline dönmesini sağlar. Bu, özellikle okullarda kullanılan cihazlarda, öğrencilerin veya kullanıcıların yaptığı değişikliklerin kalıcı olmasını engeller.</p>
+            <p>Time Freeze bilgisayar sistemlerini orijinal durumlarına geri döndürmek için kullanılır. Akıllı tahtalarda Deep Freeze kullanımı, sistemin her yeniden başlatıldığında başlangıçtaki temiz ve optimize edilmiş haline dönmesini sağlar. Bu, özellikle okullarda kullanılan cihazlarda, öğrencilerin veya kullanıcıların yaptığı değişikliklerin kalıcı olmasını engeller.</p>
             <h6 class="mt-3"><i class="bi bi-check-circle-fill"></i> Time Freeze'in Avantajları</h6>
             <ul>
               <li>Sistemi virüslerden ve istenmeyen değişikliklerden korur.</li>
@@ -388,13 +497,13 @@
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">BIOS ayarlarında neyi değiştirmeliyim?</button>
               </h2>
-              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">BIOS ayarlarını değiştirmeye gerek yok. Kurulum videosında anlattığım gibi F7 (boot menüsü) ile işlem yapacağız.</div></div>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">BIOS ayarlarını değiştirmeye gerek yok. Kurulum videosunda anlattığım gibi F7 (boot menüsü) ile işlem yapacağız.</div></div>
             </div>
             <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">İmaj dosyasını açamıyorum, ne yapmalıyım?</button>
               </h2>
-              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">İmajı önce RAR’dan çıkarın; “Nasıl Kurulur” kısmından gerekli flash bellek yazılımlarını alın.</div></div>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">İmajı önce RAR'dan çıkarın; "Nasıl Kurulur" kısmından gerekli flash bellek yazılımlarını alın.</div></div>
             </div>
             <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
               <h2 class="accordion-header">
@@ -406,7 +515,7 @@
               <h2 class="accordion-header">
                 <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Kurulumdan sonra tahtada internet yoksa?</button>
               </h2>
-              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">Wi-Fi sürücüsü eksik olabilir. “Driver” klasöründen manuel kurmanız yeterlidir. Bu imajlarda genellikle internet otomatik gelir.</div></div>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">Wi-Fi sürücüsü eksik olabilir. "Driver" klasöründen manuel kurmanız yeterlidir. Bu imajlarda genellikle internet otomatik gelir.</div></div>
             </div>
           </div>
         </div>
