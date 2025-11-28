@@ -1,531 +1,712 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Orkun Tarlacı – Profesyonel Bilgisayar & IT Çözümleri</title>
-  <meta name="description" content="Beşiktaş’ta garantili bilgisayar tamiri, akıllı tahta kurulumu, sistem hızlandırma ve IT desteği. Hızlı, güvenilir ve yerinde servis.">
-  <meta name="keywords" content="bilgisayar tamiri beşiktaş, orkun tarlacı, laptop bakım, format, ssd takma, abbasağa bilgisayar">
-  
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2025 güncel Vestel, Arçelik ve Aidata akıllı tahtalar için Windows 10/11 imajları. Tüm sürücüler yüklü, hızlı ve kolay kurulum rehberi. Ücretsiz indir.">
+  <title>Faz 1 & Faz 2 & Faz 3 Akıllı Tahta Windows 10/11 İmajları | Vestel, Arçelik, Aidata</title>
+
+  <!-- Performans / font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Vendor CSS (dokunmadım) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
   <style>
-    /* --- CSS RESET & VARIABLES --- */
     :root {
-      --primary: hsl(230, 85%, 60%);
-      --primary-dark: hsl(230, 85%, 50%);
-      --accent: hsl(280, 85%, 60%);
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-      --shadow-lg: 0 10px 40px -10px rgba(0,0,0,0.15);
-      --radius: 16px;
-      --container: 1100px;
-      --nav-height: 70px;
+      --bg: #0a0e14; --fg: #f0f4f8; --accent: #2ecc71; --accent-hover: #27ae60;
+      --card-bg: #1a1f27; --card-gradient: linear-gradient(145deg,#1f252e,#14181f);
+      --shadow: 0 10px 40px rgba(0,0,0,.5); --transition: all .3s ease-in-out;
+    }
+    body { font-family:'Outfit',sans-serif; background-color:var(--bg); color:var(--fg); transition:var(--transition); line-height:1.6; margin:0; }
+
+    /* Navbar */
+    .navbar{background:var(--card-bg);box-shadow:var(--shadow);padding:1rem;position:sticky;top:0;z-index:1030;transition:var(--transition)}
+    .navbar.scrolled{padding:.5rem 1rem;box-shadow:0 4px 20px rgba(0,0,0,.3)}
+    .navbar-brand{font-weight:700;font-size:1.5rem;display:flex;align-items:center;gap:.5rem;color:var(--fg)!important}
+    .navbar-brand i{color:var(--accent)}
+    .nav-link{font-weight:500;padding:.5rem 1rem;border-radius:8px;transition:var(--transition);color:var(--fg)!important;position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2px;background:var(--accent);transition:var(--transition);transform:translateX(-50%)}
+    .nav-link:hover::after{width:50%}
+    .nav-link:hover{background-color:rgba(46,204,113,.1);transform:translateY(-2px)}
+    .navbar-toggler{border:1px solid #fff!important}
+    .navbar-toggler-icon{width:24px;height:24px;position:relative;background-image:none!important;display:flex;flex-direction:column;justify-content:space-between}
+    .navbar-toggler-icon::before,.navbar-toggler-icon span,.navbar-toggler-icon::after{content:'';height:3px;width:100%;background:#fff;border-radius:2px;position:absolute}
+    .navbar-toggler-icon::before{top:0} .navbar-toggler-icon span{top:50%;transform:translateY(-50%)} .navbar-toggler-icon::after{bottom:0}
+
+    /* Hero */
+    .hero{
+      min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;
+      background:linear-gradient(rgba(10,14,20,.7),rgba(10,14,20,.7)),url('img/FatihWallpaper.jpg') center/cover no-repeat;
+      text-align:center;padding:2rem;position:relative
+    }
+    .hero h1{
+      font-size:clamp(2.5rem,5vw,4rem);font-weight:700;margin-bottom:1.5rem;text-shadow:0 4px 20px rgba(0,0,0,.6);
+      background:linear-gradient(90deg,var(--accent),var(--fg));-webkit-background-clip:text;-webkit-text-fill-color:transparent
+    }
+    .hero p{font-size:clamp(1rem,2vw,1.5rem);max-width:800px;margin:0 auto 2rem;color:var(--fg);opacity:.9}
+    .start-btn{
+      background:var(--accent);color:#fff!important;border:none;padding:.8rem 1.5rem;border-radius:10px;font-size:1.1rem;font-weight:500;transition:var(--transition);
+      display:inline-flex;align-items:center;gap:.5rem;box-shadow:0 4px 15px rgba(0,0,0,.2);text-decoration:none;animation:pulse 2s infinite
+    }
+    @keyframes pulse{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,204,113,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 10px rgba(46,204,113,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,204,113,0)}}
+    .start-btn:hover{background:var(--accent-hover);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+
+    /* Cards */
+    .card-container{display:grid;grid-template-columns:repeat(4,350px);gap:2rem;padding:4rem 2rem;max-width:1520px;margin:0 auto;justify-content:center}
+    .card{
+      background:var(--card-gradient);border-radius:20px;padding:2rem;box-shadow:var(--shadow);transition:var(--transition);
+      display:flex;flex-direction:column;border:none;position:relative;overflow:hidden;opacity:0;transform:translateY(20px);
+      animation:fadeInUp .5s forwards;width:350px
+    }
+    @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+    .card:nth-child(1){animation-delay:.1s}.card:nth-child(2){animation-delay:.2s}.card:nth-child(3){animation-delay:.3s}.card:nth-child(4){animation-delay:.4s}
+    .card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent),transparent);transition:var(--transition)}
+    .card:hover{transform:translateY(-10px);box-shadow:0 15px 50px rgba(0,0,0,.6)}
+    .card h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--accent);display:flex;align-items:center;gap:.5rem;position:relative;padding-bottom:.5rem}
+    .card h2::after{content:'';position:absolute;bottom:0;left:0;width:50px;height:2px;background:var(--accent);transition:var(--transition)}
+    .card:hover h2::after{width:100px}
+    .card-image{border-radius:12px;margin-bottom:1.5rem;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.2);width:100%;height:200px;background:var(--card-bg);display:flex;align-items:center;justify-content:center}
+    .card img{width:100%;height:100%;object-fit:contain;display:block;transition:var(--transition)}
+    .card:hover img{transform:scale(1.05)}
+    .features-title{font-weight:600;margin:1.5rem 0 1rem;font-size:1.2rem;color:var(--accent);display:flex;align-items:center;gap:.5rem}
+    .features ul{list-style:none;display:grid;gap:.5rem;text-align:left;padding-left:0;margin-bottom:2rem}
+    .features li{position:relative;padding-left:2rem;color:var(--fg);opacity:.95}
+    .features li::before{content:"\f058";font-family:"bootstrap-icons";color:var(--accent);position:absolute;left:0;font-size:1.2rem}
+
+    /* Buttons */
+    .btn-group{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .download-btn,.deepfreeze-btn,.df-info-btn{
+      position:relative;border:none;padding:.8rem;border-radius:10px;cursor:pointer;font-weight:500;transition:var(--transition);
+      display:flex;align-items:center;justify-content:center;gap:.5rem;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.2);text-decoration:none
+    }
+    .download-btn{background:var(--accent);color:#fff!important}
+    .deepfreeze-btn{background:#1e90ff;color:#fff!important}
+    .df-info-btn{background:#ff6f61;color:#fff!important}
+    .download-btn:hover,.deepfreeze-btn:hover,.df-info-btn:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+    .download-btn:hover{background:var(--accent-hover)} .deepfreeze-btn:hover{background:#1c7ed6} .df-info-btn:hover{background:#e55a50}
+    .df-info-btn.card-btn{margin-top:1rem;width:100%}
+    .btn-loading::after{content:'';position:absolute;width:20px;height:20px;border:2px solid #fff;border-radius:50%;border-top-color:transparent;animation:spin 1s linear infinite;margin-left:10px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* Floating */
+    .contact-btn,.scroll-top{border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;transition:var(--transition);box-shadow:var(--shadow);border:none;cursor:pointer}
+    .contact-btn{position:fixed;bottom:30px;right:30px;background:var(--card-bg);color:var(--fg);font-size:1.3rem;z-index:998}
+    .contact-btn:hover{transform:scale(1.1)}
+    .scroll-top{position:fixed;bottom:90px;right:30px;background:var(--accent);color:#fff;font-size:1.5rem;display:none;z-index:999}
+    .scroll-top:hover{background:var(--accent-hover);transform:translateY(-3px)}
+
+    /* Footer */
+    footer{background:var(--card-bg);color:var(--fg);text-align:center;padding:3rem 1rem;margin-top:3rem;border-top:1px solid rgba(255,255,255,.1)}
+    footer a{color:var(--fg);transition:var(--transition)}
+    footer a:hover{color:var(--accent)}
+
+    /* Modals */
+    .modal-content{background:#14181f;border:2px solid var(--accent);border-radius:15px;color:var(--fg);backdrop-filter:blur(8px);background-color:rgba(20,24,31,.8)}
+    .modal-header{border-bottom:none;padding-bottom:0}
+    .modal-title{font-size:1.5rem;font-weight:600;color:var(--fg);width:100%;text-align:center}
+    .modal-body{padding:1.5rem}
+    .modal-body form{display:flex;flex-direction:column;gap:1rem}
+    .modal-body input,.modal-body textarea{width:100%;padding:.8rem;border:2px solid var(--accent);border-radius:8px;background-color:var(--card-bg);color:var(--fg);font-size:1rem;font-family:'Outfit',sans-serif}
+    .modal-body textarea{height:120px;resize:none}
+    .modal-body input::placeholder,.modal-body textarea::placeholder{color:#6c757d;font-family:'Outfit',sans-serif}
+    .modal-body button{background:var(--accent);color:#fff;border:none;padding:.8rem 1.5rem;border-radius:8px;cursor:pointer;transition:var(--transition);font-family:'Outfit',sans-serif;font-weight:500;align-self:center}
+    .modal-body button:hover{background:var(--accent-hover);transform:translateY(-3px)}
+    .modal-footer{border-top:none;justify-content:center}
+    .btn-close{filter:invert(1)}
+
+    /* Responsive (orijinal davranış korunarak) */
+    @media (max-width:768px){
+      .navbar-brand{font-size:1.2rem}
+      .card-container{grid-template-columns:1fr;max-width:100%;padding:2rem 1rem}
+      .card{width:100%;max-width:350px;margin:0 auto}
+      .btn-group{grid-template-columns:1fr}
+    }
+    @media (min-width:769px) and (max-width:1024px){
+      .card-container{grid-template-columns:1fr;max-width:100%;padding:2rem 1rem}
+      .card{width:100%;max-width:500px;margin:0 auto}
+      .btn-group{grid-template-columns:1fr 1fr}
+    }
+    .accordion-button{background:#1a1f27;color:var(--fg);border:1px solid var(--accent);border-radius:10px!important;font-weight:500;transition:background-color .3s ease}
+    .accordion-button:not(.collapsed){background:rgba(46,204,113,.1);color:var(--accent);box-shadow:none}
+    .accordion-button::after{filter:invert(1)}
+    .accordion-item{background:transparent;border:none}
+    .fancybox__container{z-index:12000!important}
+    @media (min-width:769px) and (max-width:1500px){
+      .card-container{grid-template-columns:repeat(2,350px);max-width:100%;padding:2rem 1rem}
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b0f19;
-        --surface: #111827;
-        --text: #f1f5f9;
-        --text-muted: #94a3b8;
-        --border: #1e293b;
-        --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
-        --shadow-lg: 0 10px 40px -10px rgba(0,0,0,0.7);
-      }
+    .contact-box{display:flex;flex-direction:column;gap:1rem;margin-top:1rem}
+    .contact-row{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.05);padding:.8rem 1rem;border-radius:10px;gap:.75rem}
+    .contact-info{display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;gap:.5rem;flex:1;min-width:0}
+    .contact-label{font-weight:600;color:var(--accent);white-space:nowrap}
+    .contact-value{color:var(--fg);word-break:break-word;flex-shrink:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .copy-btn{background:var(--accent);color:#fff;border:none;padding:.5rem .7rem;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);flex-shrink:0}
+    .copy-btn:hover{background:var(--accent-hover)}
+
+    /* === Misyon & Vizyon Bölümü === */
+    .mission-vision-section {
+      padding: 4rem 2rem;
+      max-width: 1520px;
+      margin: 0 auto;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 20px); }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
-      background-attachment: fixed;
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, .brand { font-family: 'Outfit', sans-serif; }
-    a { text-decoration: none; color: inherit; transition: 0.3s ease; }
-    ul { list-style: none; }
-    img { max-width: 100%; display: block; }
-
-    /* --- LAYOUT UTILS --- */
-    .container { width: 90%; max-width: var(--container); margin-inline: auto; }
-    .section-padding { padding-block: 80px; }
-    
-    /* --- HEADER --- */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: var(--nav-height);
-      background: rgba(var(--surface), 0.8); /* Fallback */
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-    }
-    
-    header .container { display: flex; justify-content: space-between; align-items: center; }
-    
-    .brand { font-weight: 800; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
-    .brand i { color: var(--primary); }
-
-    /* Desktop Nav */
-    .nav-links { display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-muted); position: relative; }
-    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-      background: var(--primary); transition: 0.3s;
-    }
-    .nav-links a:hover::after { width: 100%; }
-
-    /* Mobile Toggle */
-    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
-
-    /* --- HERO --- */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      padding-top: var(--nav-height);
-    }
-    
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .hero-content h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      letter-spacing: -1px;
-    }
-
-    .text-gradient {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-content p {
-      font-size: 1.125rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-      max-width: 50ch;
-    }
-
-    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5); }
-
-    .btn-outline {
-      border: 2px solid var(--border);
-      color: var(--text);
-      background: transparent;
-    }
-    .btn-outline:hover { border-color: var(--text); background: var(--text); color: var(--bg); }
-
-    /* Glass Card in Hero */
-    .hero-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(20px);
-      padding: 2.5rem;
-      border-radius: 24px;
+    .mission-vision-title {
       text-align: center;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      overflow: hidden;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .6rem;
     }
-    @media (prefers-color-scheme: light) {
-      .hero-card { background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.8); }
-    }
-
-    .status-badge {
-      display: inline-block;
-      background: rgba(34, 197, 94, 0.1);
-      color: #22c55e;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(34, 197, 94, 0.2);
-    }
-
-    /* --- SERVICES --- */
-    .section-header { text-align: center; margin-bottom: 3rem; max-width: 600px; margin-inline: auto; }
-    .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .service-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
-      transition: all 0.3s ease;
-      position: relative;
-      top: 0;
-    }
-
-    .service-card:hover {
-      top: -10px;
-      box-shadow: var(--shadow-lg);
-      border-color: var(--primary);
-    }
-
-    .icon-box {
-      width: 50px; height: 50px;
-      background: rgba(99, 102, 241, 0.1);
-      color: var(--primary);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* --- ABOUT & STATS --- */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-    .about-text p { margin-bottom: 1rem; color: var(--text-muted); }
-    
-    .stats {
+    .mission-vision-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+      gap: 2rem;
     }
-    .stat-item {
-      background: var(--surface); padding: 1.5rem;
-      border-radius: var(--radius); border: 1px solid var(--border);
-      text-align: center;
+    .mission-card, .vision-card {
+      background: var(--card-gradient);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      border: none;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
     }
-    .stat-number { font-size: 2rem; font-weight: 800; color: var(--primary); display: block; }
-    .stat-label { font-size: 0.9rem; color: var(--text-muted); }
+    .mission-card:hover, .vision-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 50px rgba(0,0,0,.6);
+    }
+    .mission-card::before, .vision-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      transition: var(--transition);
+    }
+    .mission-card h3, .vision-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .mission-card p, .vision-card p {
+      color: var(--fg);
+      opacity: .9;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .mission-card ul, .vision-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    .mission-card li, .vision-card li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: .8rem;
+      color: var(--fg);
+      opacity: .9;
+    }
+    .mission-card li::before, .vision-card li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
 
-    /* --- CONTACT --- */
-    .contact-wrapper {
-      background: var(--surface);
-      border-radius: 24px;
-      padding: 3rem;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-lg);
-      text-align: center;
+    /* === KURULUM YAPTIĞIMIZ OKULLAR (tek kart, tamamen beyaz yazı) === */
+    .schools-section{padding:4rem 2rem;max-width:1520px;margin:0 auto}
+    .schools-title{ text-align:center;font-size:2.2rem;margin-bottom:2rem;color:var(--accent);display:flex;align-items:center;justify-content:center;gap:.6rem }
+    .school-card{background:var(--card-gradient);border-radius:20px;padding:2rem;box-shadow:var(--shadow);border:none;position:relative;overflow:hidden;max-width:900px;margin:0 auto}
+    .school-card *{color:#fff!important}
+    .school-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent),transparent)}
+    .school-card h3{font-size:1.6rem;margin-bottom:1rem;color:var(--accent)!important;text-align:center}
+    .school-cover{border-radius:12px;overflow:hidden;background:var(--card-bg);height:240px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+    .school-cover img{max-width:100%;max-height:100%;object-fit:contain}
+    .school-info{display:grid;gap:.6rem;margin-bottom:1rem}
+    .school-info i{color:var(--accent)}
+    
+    /* Galeri accordion stili */
+    .gallery-accordion .accordion-button {
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      padding: 0.8rem 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
     }
-
-    .contact-methods {
-      display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;
+    .gallery-accordion .accordion-button:not(.collapsed) {
+      background: var(--accent-hover);
+    }
+    .gallery-accordion .accordion-body {
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.8rem;
+    }
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--card-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     
-    .contact-item {
-      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-      min-width: 150px;
-    }
-    .contact-icon-lg {
-      font-size: 2.5rem; color: var(--text); transition: 0.3s;
-    }
-    .contact-item:hover .contact-icon-lg { color: var(--primary); transform: scale(1.1); }
-
-    /* --- FOOTER --- */
-    footer {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 2rem 0;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    /* --- ANIMATION UTILS --- */
-    .fade-in-up {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    .delay-100 { animation-delay: 0.1s; }
-    .delay-200 { animation-delay: 0.2s; }
-    .delay-300 { animation-delay: 0.3s; }
-
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* --- RESPONSIVE --- */
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      
-      .nav-links {
-        position: fixed;
-        top: var(--nav-height);
-        left: 0; right: 0;
-        background: var(--surface);
-        border-bottom: 1px solid var(--border);
-        flex-direction: column;
-        padding: 2rem;
-        gap: 1.5rem;
-        transform: translateY(-150%);
-        transition: 0.4s ease;
-        z-index: 999;
+    @media (max-width:768px){
+      .mission-vision-container {
+        grid-template-columns: 1fr;
       }
-      
-      .nav-links.active { transform: translateY(0); box-shadow: var(--shadow-lg); }
-      
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-content h1 { font-size: 2.5rem; }
-      .btn-group { justify-content: center; }
-      .hero-content p { margin-inline: auto; }
-      .about-grid { grid-template-columns: 1fr; }
+      .mission-card, .vision-card {
+        padding: 1.5rem;
+      }
+      .school-card{padding:1.5rem}
+      .school-cover{height:200px}
+      .gallery-accordion .accordion-body {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Floating Buttons -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Sayfanın başına dön"><i class="bi bi-arrow-up"></i></button>
+  <button class="contact-btn" id="contactBtn" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Bize ulaşın" role="button"><i class="bi bi-envelope"></i></button>
 
-  <header>
-    <div class="container">
-      <a href="#" class="brand">
-        <i class="fa-solid fa-bolt"></i> Orkun Tarlacı
-      </a>
-      <div class="menu-toggle" id="mobile-menu-btn">
-        <i class="fa-solid fa-bars"></i>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" aria-label="Anasayfa"><i class="bi bi-easel"></i> Akıllı Tahta</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü aç/kapat"><span class="navbar-toggler-icon"><span></span></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal" role="button">Hakkımızda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#installModal" role="button"><i class="bi bi-download me-1"></i> Nasıl Kurulur?</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal" role="button">Aradığınız Yazılım Yok Mu? - Bize Ulaşın</a></li>
+          <li class="nav-item"><a class="nav-link d-flex align-items-center" href="#" data-bs-toggle="modal" data-bs-target="#faqModal" role="button"><i class="bi bi-question-circle me-1"></i> SSS</a></li>
+        </ul>
       </div>
-      <nav class="nav-links" id="nav-links">
-        <a href="#home">Ana Sayfa</a>
-        <a href="#services">Hizmetler</a>
-        <a href="#about">Hakkımda</a>
-        <a href="#contact">İletişim</a>
-        <a href="tel:+905523875272" style="color:var(--primary); font-weight:700">
-          <i class="fa-solid fa-phone"></i> 0552 387 5272
-        </a>
-      </nav>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content fade-in-up">
-          <div class="status-badge"><i class="fa-solid fa-circle" style="font-size:8px; vertical-align:middle; margin-right:5px;"></i> Aktif Hizmet Veriliyor</div>
-          <h1>Beşiktaş'ın <span class="text-gradient">Teknolojik Çözüm</span> Noktası</h1>
-          <p>Bilgisayarınız yavaş mı? Akıllı tahta kurulumu mu gerekiyor? Abbasağa ve çevresinde en hızlı, güvenilir ve uygun fiyatlı teknik servis hizmeti.</p>
-          <div class="btn-group">
-            <a href="tel:+905523875272" class="btn btn-primary">
-              <i class="fa-solid fa-phone"></i> Hemen Ara
-            </a>
-            <a href="https://wa.me/905523875272" target="_blank" class="btn btn-outline">
-              <i class="fa-brands fa-whatsapp"></i> WhatsApp
-            </a>
-          </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="animate__animated animate__fadeInDown">Güncel Akıllı Tahta İmajları</h1>
+      <p class="animate__animated animate__fadeIn animate__delay-1s">Hiçbir gereksiz uygulaması olmayan temiz ve hızlı Akıllı Tahta imajları</p>
+      <a href="#products" class="start-btn mt-4 animate__animated animate__fadeInUp animate__delay-1s"><i class="bi bi-arrow-down"></i> Başla</a>
+    </div>
+  </section>
+<!-- === MİSYON & VİZYON BÖLÜMÜ === -->
+    <section class="mission-vision-section">
+      <h2 class="mission-vision-title"><i class="bi bi-bullseye"></i> Misyon & Vizyon</h2>
+      <div class="mission-vision-container">
+        <div class="mission-card">
+          <h3><i class="bi bi-flag"></i> 🎯 MİSYON</h3>
+          <p>Türkiye'deki tüm akıllı tahtaları, her okulun kendi ihtiyaçlarına göre özel olarak optimize edilmiş, hızlı, güvenli ve kararlı yazılımlarla geliştirmek.</p>
+          <ul>
+            <li>Eski ve yavaş sistemleri modern hâle getirerek öğretmen ve öğrencilere sorunsuz, verimli ve kesintisiz bir ders deneyimi sunmak.</li>
+            <li>Kurulumdan yazılıma kadar tüm süreçte şeffaf, güvenilir ve teknik olarak doğru çözümler üretmek.</li>
+          </ul>
         </div>
-
-        <div class="hero-card fade-in-up delay-200">
-          <i class="fa-solid fa-laptop-medical" style="font-size: 4rem; color: var(--primary); margin-bottom: 1rem;"></i>
-          <h3 style="margin-bottom:0.5rem">Hızlı Servis</h3>
-          <p style="font-size:0.9rem; color:var(--text-muted)">Aynı gün arıza tespiti ve hızlı onarım garantisi.</p>
-          <div style="margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1); display:flex; justify-content:space-around;">
-            <div>
-              <i class="fa-brands fa-windows"></i>
-              <div style="font-size:0.75rem; margin-top:5px">Format</div>
-            </div>
-            <div>
-              <i class="fa-solid fa-microchip"></i>
-              <div style="font-size:0.75rem; margin-top:5px">Donanım</div>
-            </div>
-            <div>
-              <i class="fa-solid fa-shield-virus"></i>
-              <div style="font-size:0.75rem; margin-top:5px">Güvenlik</div>
-            </div>
-          </div>
+        <div class="vision-card">
+          <h3><i class="bi bi-rocket-takeoff"></i> 🚀 VİZYON</h3>
+          <p>Türkiye'de akıllı tahta yazılım özelleştirmesinde standart imajların yerine okul bazlı özel yazılım dönemini başlatan lider proje olmak.</p>
+          <ul>
+            <li>Her okulun kimliğine, ihtiyaçlarına ve kullanım tarzına uygun tamamen kişiye/kuruma özgü akıllı tahta yazılımları geliştiren, ulusal ölçekte tanınan ve güvenilen bir teknoloji markası hâline gelmek.</li>
+            <li>Uzun vadede akıllı sınıf teknolojileri, kurumsal eğitim yazılımları ve yönetim altyapıları alanında ülke çapında referans olacak çözümler sunmak.</li>
+          </ul>
         </div>
       </div>
     </section>
+  <!-- Main -->
+  <main id="products">
+    <div class="container text-center py-5">
+      <h2><i class="bi bi-display"></i> Vestel, Arçelik, Aidata Akıllı Tahta Windows 10/11 İmajı</h2>
+      <!-- KARTLAR JS ile üretilecek -->
+      <div class="card-container" id="cards"></div>
+    </div>
 
-    <section id="services" class="section-padding">
-      <div class="container">
-        <div class="section-header fade-in-up">
-          <h2>Hizmetlerimiz</h2>
-          <p style="color:var(--text-muted)">Bireysel ve kurumsal ihtiyaçlarınız için uçtan uca çözümler üretiyoruz.</p>
-        </div>
-        
-        <div class="cards-grid">
-          <div class="service-card fade-in-up delay-100">
-            <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-            <h3>Tamir & Bakım</h3>
-            <p style="color:var(--text-muted); margin-top:0.5rem">Anakart tamiri, ekran değişimi, termal macun yenileme ve fan temizliği ile cihazınız ilk günkü hızına dönsün.</p>
-          </div>
-          <div class="service-card fade-in-up delay-200">
-            <div class="icon-box"><i class="fa-brands fa-windows"></i></div>
-            <h3>Windows Optimizasyon</h3>
-            <p style="color:var(--text-muted); margin-top:0.5rem">Format, driver kurulumları, gereksiz yazılım temizliği ve sistem hızlandırma işlemleri.</p>
-          </div>
-          <div class="service-card fade-in-up delay-300">
-            <div class="icon-box"><i class="fa-solid fa-chalkboard-user"></i></div>
-            <h3>Akıllı Tahta Kurulumu</h3>
-            <p style="color:var(--text-muted); margin-top:0.5rem">Okullar ve ofisler için akıllı tahta montajı, yazılım kurulumu ve kullanım eğitimi.</p>
-          </div>
-          <div class="service-card fade-in-up delay-100">
-            <div class="icon-box"><i class="fa-solid fa-hard-drive"></i></div>
-            <h3>Veri Kurtarma & Yedek</h3>
-            <p style="color:var(--text-muted); margin-top:0.5rem">Silinen dosyaları kurtarma, disk klonlama (SSD'ye geçiş) ve otomatik yedekleme sistemleri.</p>
-          </div>
-          <div class="service-card fade-in-up delay-200">
-            <div class="icon-box"><i class="fa-solid fa-virus-slash"></i></div>
-            <h3>Virüs Temizleme</h3>
-            <p style="color:var(--text-muted); margin-top:0.5rem">Fidye yazılımları, truva atları ve reklam virüslerini verilerinize zarar vermeden temizliyoruz.</p>
-          </div>
-           <div class="service-card fade-in-up delay-300">
-            <div class="icon-box"><i class="fa-solid fa-tags"></i></div>
-            <h3>Yedek Parça Temini</h3>
-            <p style="color:var(--text-muted); margin-top:0.5rem">Bütçenize uygun orijinal veya 1. sınıf muadil parçaları en iyi fiyat garantisiyle buluyoruz.</p>
-          </div>
-        </div>
-      </div>
+    
+
+    <!-- === KURULUM YAPTIĞIMIZ OKULLAR (tek kart) === -->
+    <section class="schools-section">
+      <h2 class="schools-title"><i class="bi bi-building"></i> Kurulum Yaptığımız Okullar</h2>
+      <div id="schoolCard" class="school-card"><!-- JS dolduracak --></div>
     </section>
 
-    <section id="about" class="section-padding" style="background:var(--surface)">
-      <div class="container about-grid">
-        <div class="fade-in-up">
-          <h2 style="font-size:2.5rem; margin-bottom:1.5rem">Hakkımda</h2>
-          <div class="about-text">
-            <p>Merhaba, ben <strong>Orkun Tarlacı</strong>. Topkapı Üniversitesi Bilgisayar Teknolojisi bölümü öğrencisiyim ve 14 yaşımdan beri teknoloji dünyasının içindeyim.</p>
-            <p>Acıbadem Hastanesi ve Simas Yatırım gibi kurumsal firmalarda IT stajyerliği yaparak profesyonel deneyim kazandım. Son 2 yıldır Beşiktaş Abbasağa'da kendi işimi yaparak, mahalle esnafı samimiyetiyle kurumsal kaliteyi birleştiriyorum.</p>
+    <!-- Time Freeze Info Modal -->
+    <div class="modal fade" id="dfInfoModal" tabindex="-1" aria-labelledby="dfInfoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+          <div class="modal-header">
+            <h5 class="modal-title" id="dfInfoModalLabel"><i class="bi bi-shield-lock"></i> Time Freeze Nedir?</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
           </div>
-          <a href="#contact" class="btn btn-outline" style="margin-top:1rem">İletişime Geç</a>
-        </div>
-        
-        <div class="stats fade-in-up delay-200">
-          <div class="stat-item">
-            <span class="stat-number">5+</span>
-            <span class="stat-label">Yıl Deneyim</span>
+          <div class="modal-body">
+            <p>Time Freeze bilgisayar sistemlerini orijinal durumlarına geri döndürmek için kullanılır. Akıllı tahtalarda Deep Freeze kullanımı, sistemin her yeniden başlatıldığında başlangıçtaki temiz ve optimize edilmiş haline dönmesini sağlar. Bu, özellikle okullarda kullanılan cihazlarda, öğrencilerin veya kullanıcıların yaptığı değişikliklerin kalıcı olmasını engeller.</p>
+            <h6 class="mt-3"><i class="bi bi-check-circle-fill"></i> Time Freeze'in Avantajları</h6>
+            <ul>
+              <li>Sistemi virüslerden ve istenmeyen değişikliklerden korur.</li>
+              <li>Yazılım yüklemeleri veya sistem hataları sonrası cihazı ilk haline döndürür.</li>
+              <li>Bakım ve yönetim süreçlerini kolaylaştırır.</li>
+              <li>Akıllı tahtaların performansını korur ve uzun süreli kullanım sağlar.</li>
+            </ul>
+            <p class="mt-3">Time Freeze, "TF Win10" ve "TF Win11" imajlarımızda isteğe bağlı olarak sunulmaktadır.</p>
           </div>
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Müşteri Memnuniyeti</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">7/24</span>
-            <span class="stat-label">Whatsapp Destek</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">Uygun</span>
-            <span class="stat-label">Fiyat Politikası</span>
-          </div>
+          <div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button></div>
         </div>
       </div>
-    </section>
-
-    <section id="contact" class="section-padding">
-      <div class="container fade-in-up">
-        <div class="contact-wrapper">
-          <h2>İletişime Geçin</h2>
-          <p style="color:var(--text-muted); max-width:500px; margin:1rem auto;">
-            Sorununuz ne olursa olsun, bir telefon uzağınızdayım. Ücretsiz arıza tespiti ve danışmanlık için arayabilirsiniz.
-          </p>
-          
-          <div class="contact-methods">
-            <a href="tel:+905523875272" class="contact-item">
-              <i class="fa-solid fa-phone-volume contact-icon-lg"></i>
-              <span style="font-weight:600">Ara</span>
-              <span style="font-size:0.9rem; color:var(--text-muted)">0552 387 5272</span>
-            </a>
-            
-            <a href="https://wa.me/905523875272?text=Merhaba%20Orkun,%20servis%20hizmeti%20almak%20istiyorum." target="_blank" class="contact-item">
-              <i class="fa-brands fa-whatsapp contact-icon-lg"></i>
-              <span style="font-weight:600">WhatsApp</span>
-              <span style="font-size:0.9rem; color:var(--text-muted)">Mesaj Gönder</span>
-            </a>
-
-            <div class="contact-item">
-              <i class="fa-solid fa-location-dot contact-icon-lg"></i>
-              <span style="font-weight:600">Konum</span>
-              <span style="font-size:0.9rem; color:var(--text-muted)">Beşiktaş / Abbasağa</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
-  <footer>
-    <div class="container">
-      <div style="margin-bottom:1rem">
-        <a href="#" style="font-weight:800; font-size:1.2rem"><i class="fa-solid fa-bolt" style="color:var(--primary)"></i> Orkun Tarlacı</a>
+  <!-- Install Modal -->
+  <div class="modal fade" id="installModal" tabindex="-1" aria-labelledby="installModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="installModalLabel"><i class="bi bi-download"></i> Nasıl Kurulur?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Modali kapat"></button>
+        </div>
+        <div class="modal-body d-flex gap-3">
+          <div class="ratio ratio-16x9 mt-3">
+            <iframe src="https://www.youtube.com/embed/jJiNK7KdP_4" title="Akıllı Tahta Kurulum Rehberi" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="ratio ratio-16x9 mt-3">
+            <iframe src="https://www.youtube.com/embed/Rxc1QU4z4jw" title="Akıllı Tahta Kurulum Rehberi" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button></div>
       </div>
-      <p>&copy; 2025 Tüm Hakları Saklıdır. Beşiktaş Bilgisayar Teknik Servis Hizmetleri.</p>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px; border: 2px solid var(--accent);">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contactModalLabel"><i class="bi bi-envelope"></i> Bize Ulaşın</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
+        <div class="modal-body">
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="7587c520-de63-4305-aacc-90853cad5c74">
+            <input type="text" name="name" placeholder="Adınız" required aria-label="Adınız">
+            <input type="email" name="email" placeholder="E-posta Adresiniz" required aria-label="E-posta Adresiniz">
+            <textarea name="message" placeholder="Mesajınız" rows="4" required aria-label="Mesajınız"></textarea>
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+            <button type="submit">Gönder</button>
+          </form>
+
+          <div class="contact-box mt-4">
+            <div class="contact-row">
+              <div class="contact-info"><span class="contact-label">E-posta:</span><span class="contact-value">orkuntarlaci@gmail.com</span></div>
+              <button class="copy-btn" onclick="copyText('orkuntarlaci@gmail.com')" aria-label="E-postayı kopyala"><i class="bi bi-clipboard"></i></button>
+            </div>
+            <div class="contact-row">
+              <div class="contact-info"><span class="contact-label">Telefon:</span><span class="contact-value">0552 387 5272</span></div>
+              <button class="copy-btn" onclick="copyText('0552 387 5272')" aria-label="Telefonu kopyala"><i class="bi bi-clipboard"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Modal -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="aboutModalLabel"><i class="bi bi-info-circle-fill"></i> Hakkımızda</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
+        <div class="modal-body">
+          <p>Bu proje, Türkiye'deki okullarda kullanılan Vestel, Arçelik ve Aidata marka akıllı tahtalar için temiz, güncel ve hızlı çalışan Windows imajları sunmak için hazırlanmıştır.</p>
+          <h6 class="mt-3"><i class="bi bi-stars"></i> Destek Verenler</h6>
+          <ul>
+            <li><strong>Orkun Tarlacı</strong> – Geliştirici & Kurulum Sorumlusu</li>
+            <li><strong>Emir Arda Ketik</strong> – Bilişim Teknolojileri Öğrencisi</li>
+            <li><strong>Furkan Coşkun</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
+            <li><strong>Mustafa Yalçın</strong> – Bilişim Teknolojileri Öğrencisi & Kurulum Sorumlusu</li>
+            <li><strong>Hüseyin Tatar</strong> – Bilişim Teknolojileri Öğretmenی</li>
+            <li><strong>Serhan Kılıçak</strong> – Bilişim Teknolojileri Bölüm Başkanı</li>
+          </ul>
+          <h6 class="mt-3"><i class="bi bi-envelope-at-fill"></i> İletişim</h6>
+          <div class="contact-box mt-3">
+            <div class="contact-row">
+              <span class="contact-label">E-posta:</span>
+              <span class="contact-value">orkuntarlaci@gmail.com</span>
+              <button class="copy-btn" onclick="copyText('orkuntarlaci@gmail.com')" aria-label="E-postayı kopyala"><i class="bi bi-clipboard"></i></button>
+            </div>
+            <div class="contact-row mt-2">
+              <span class="contact-label">Telefon:</span>
+              <span class="contact-value">0552 387 5272</span>
+              <button class="copy-btn" onclick="copyText('0552 387 5272')" aria-label="Telefonu kopyala"><i class="bi bi-clipboard"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Modal -->
+  <div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="background-color: var(--card-bg); color: var(--fg); border-radius: 20px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-center w-100" id="faqModalLabel"><i class="bi bi-question-circle-fill"></i> Sıkça Sorulan Sorular</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
+        <div class="modal-body">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">İmajı hangi programla yazdırmalıyım?</button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">Nasıl Kurulur içindeki Güncel Akıllı Tahta Flash Bellek Hazırlama videosunda gerekli adımlar vardır; rahatlıkla kurabilirsiniz.</div></div>
+            </div>
+            <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">BIOS ayarlarında neyi değiştirmeliyim?</button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">BIOS ayarlarını değiştirmeye gerek yok. Kurulum videosunda anlattığım gibi F7 (boot menüsü) ile işlem yapacağız.</div></div>
+            </div>
+            <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">İmaj dosyasını açamıyorum, ne yapmalıyım?</button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">İmajı önce RAR'dan çıkarın; "Nasıl Kurulur" kısmından gerekli flash bellek yazılımlarını alın.</div></div>
+            </div>
+            <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Time Freeze şifresi nedir?</button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">5894svs</div></div>
+            </div>
+            <div class="accordion-item mb-3" style="background-color: rgba(0,0,0,0.4); border: 1.5px solid var(--accent); border-radius: 12px;">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Kurulumdan sonra tahtada internet yoksa?</button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-white">Wi-Fi sürücüsü eksik olabilir. "Driver" klasöründen manuel kurmanız yeterlidir. Bu imajlarda genellikle internet otomatik gelir.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <p>© 2025 Akıllı Tahta İmajları - Orkun Tarlacı</p>
+      <div class="mt-3"><a href="#" class="text-decoration-none"><i class="bi bi-shield-check"></i> Gizlilik Politikası</a></div>
+      <div class="footer-social"></div>
     </div>
   </footer>
 
+  <!-- Vendor JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+  <!-- App JS (tek dosya içinde) -->
   <script>
-    // Mobil Menü Aç/Kapa
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const navLinks = document.getElementById('nav-links');
+    "use strict";
 
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      // İkonu değiştir (Hamburger <-> Çarpı)
-      const icon = menuBtn.querySelector('i');
-      if (navLinks.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-xmark');
-      } else {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
+    /* ===================== 1) TAHTA KARTLARI (AYNEN) ===================== */
+    const boards = [
+      { title:"Vestel Siyah Tahta", img:"img/SiyahTahta.png",
+        features:["Windows 10/11 Pro (anahtarlı)","Eksiksiz Driver","Tamamen Optimize ve Hızlı","Orijinal Office 2013 Tam Anahtarlı","Time Freeze (İsteğe Bağlı)","Reklam engelleyicili Chrome","Fatih Kalem ve Beyaz Yazı Tahtası","Sınav Saati uygulaması"],
+        links:{ win10:"https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link", tf10:"https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link" }
+      },
+      { title:"Vestel Gri Tahta", img:"img/GriTahta.png",
+        features:["Windows 10/11 Pro (anahtarlı)","Eksiksiz Driver","Tamamen Optimize ve Hızlı","Orijinal Office 2013 Tam Anahtarlı","Time Freeze (İsteğe Bağlı)","Reklam engelleyicili Chrome","Fatih Kalem ve Beyaz Yazı Tahtası","Sınav Saati uygulaması"],
+        links:{ win10:"https://drive.google.com/drive/u/0/folders/1kyQjNMR0xhYMSu8XpZK_Q76DOkyGhlM4", tf10:"https://drive.google.com/drive/u/0/folders/1BD84DWrLnPZ8wCdtfxZlUJ0BxBatX7hF" }
+      },
+      { title:"Arçelik Siyah Tahta", img:"img/ArcelikTahta.png",
+        features:["Windows 10/11 Pro (anahtarlı)","Eksiksiz Driver","Tamamen Optimize ve Hızlı","Orijinal Office 2013 Tam Anahtarlı","Time Freeze (İsteğe Bağlı)","Reklam engelleyicili Chrome","Fatih Kalem ve Beyaz Yazı Tahtası","Sınav Saati uygulaması"],
+        links:{ win10:"https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link", tf10:"https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link" }
+      },
+      { title:"Aidata Akıllı Tahta", img:"img/AidataTahta.png",
+        features:["Windows 10/11 Pro (anahtarlı)","Eksiksiz Driver","Tamamen Optimize ve Hızlı","Orijinal Office 2013 Tam Anahtarlı","Time Freeze (İsteğe Bağlı)","Reklam engelleyicili Chrome","Fatih Kalem ve Beyaz Yazı Tahtası","Sınav Saati uygulaması"],
+        links:{ win10:"https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link", tf10:"https://drive.google.com/drive/folders/1jLZPQlIgGTjacDd8qaHIshXxS1I8FjIB?usp=drive_link" }
       }
-    });
+    ];
 
-    // Linke tıklayınca menüyü kapat
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuBtn.querySelector('i').classList.remove('fa-xmark');
-        menuBtn.querySelector('i').classList.add('fa-bars');
-      });
-    });
+    const utils = {
+      scrollToTop(){ window.scrollTo({ top:0, behavior:'smooth' }); },
+      showLoading(btn){ btn.classList.add('btn-loading'); },
+      hideLoading(btn){ btn.classList.remove('btn-loading'); }
+    };
 
-    // Scroll Animasyonu için basit Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = 'running'; // CSS'de paused yapabiliriz ama şimdilik direkt tetikleniyor
-        }
+    function copyText(text){
+      (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject())
+      .then(() => window.Swal ? Swal.fire('Kopyalandı!', `"${text}" panoya kopyalandı.`, 'success') : alert('Kopyalandı: '+text))
+      .catch(() => {
+        const tmp = document.createElement('textarea');
+        tmp.value = text; document.body.appendChild(tmp); tmp.select();
+        try { document.execCommand('copy'); window.Swal ? Swal.fire('Kopyalandı!', `"${text}" panoya kopyalandı.`, 'success') : alert('Kopyalandı: '+text); }
+        catch { alert('Kopyalama başarısız.'); }
+        finally { document.body.removeChild(tmp); }
       });
+    }
+    window.copyText = copyText; // inline onclick için
+
+    function renderCards(){
+      const wrap = document.getElementById('cards');
+      wrap.innerHTML = boards.map((b,i)=>`
+        <div class="card" tabindex="0" style="animation-delay:${(i+1)*0.1}s">
+          <h2><i class="bi bi-display"></i> ${b.title}</h2>
+          <a href="${b.img}" data-fancybox="gallery" data-caption="${b.title}">
+            <div class="card-image"><img src="${b.img}" alt="${b.title}" loading="lazy"></div>
+          </a>
+          <div class="features">
+            <div class="features-title"><i class="bi bi-list-check"></i> Özellikler</div>
+            <ul>${b.features.map(f=>`<li>• ${f}</li>`).join('')}</ul>
+          </div>
+          <div class="btn-group">
+            <a href="${b.links.win10}" class="download-btn" target="_blank" rel="noopener noreferrer" aria-label="Windows 10 indir"><i class="bi bi-download"></i> Windows 10</a>
+            <a href="${b.links.tf10}" class="deepfreeze-btn" target="_blank" rel="noopener noreferrer" aria-label="Time Freeze ile Windows 10 indir"><i class="bi bi-shield-lock"></i> TF Win10</a>
+          </div>
+          <a href="#" class="df-info-btn card-btn" data-bs-toggle="modal" data-bs-target="#dfInfoModal" aria-label="Time Freeze nedir"><i class="bi bi-info-circle"></i> Time Freeze - TF - Nedir?</a>
+        </div>
+      `).join('');
+    }
+
+    /* ===================== 2) OKUL KARTI (Rüştü Akın) ===================== */
+    // SADECE BU 6 SATIRI DEĞİŞTİREREK yeni okulu kolayca yazarsın:
+    const OKUL = {
+      ad   : "Rüştü Akın Mesleki ve Teknik Anadolu Lisesi",
+      konum: "İstanbul / Etiler",
+      tarih: "2025-02-01",
+      modeller: ["Vestel Gri"],
+      klasor: "img/Okullar/Rustu_Akin/"  // 1.jpg, 2.jpg, 3.png ... buraya
+    };
+    const GALERI_ADEDI_TARA = 60; // 1..60 arası dosya varsa yakalar (jpg/jpeg/png/webp)
+
+    async function taraGaleri(){
+      const exts = ["jpg","jpeg","png","webp"];
+      const adaylar = [];
+      for(let i=1;i<=GALERI_ADEDI_TARA;i++){ for(const e of exts){ adaylar.push(`${OKUL.klasor}${i}.${e}`); } }
+      const kontroller = adaylar.map(src=>new Promise(res=>{
+        const im=new Image(); im.onload=()=>res(src); im.onerror=()=>res(null); im.src=src+'?v='+Date.now();
+      }));
+      const bulunan = (await Promise.all(kontroller)).filter(Boolean);
+      // Aynı numaranın birden çok uzantısı geldiyse tekilleştir
+      const tekil=[], seen=new Set();
+      for(const p of bulunan){ const m=p.match(/\/(\d+)\.(jpg|jpeg|png|webp)/i); const key=m?m[1]:p; if(!seen.has(key)){ seen.add(key); tekil.push(p); } }
+      return tekil;
+    }
+
+    function okulKartiCiz(galeri){
+      const root=document.getElementById('schoolCard');
+      const cover = galeri[0] || "";
+      
+      root.innerHTML = `
+        <h3><i class="bi bi-mortarboard"></i> ${OKUL.ad}</h3>
+        ${cover ? `
+          <a href="${cover}" data-fancybox="okul-galeri" data-caption="${OKUL.ad}">
+            <div class="school-cover"><img src="${cover}" alt="${OKUL.ad}" loading="lazy"></div>
+          </a>` : `
+          <div class="school-cover"><i class="bi bi-image" style="font-size:2rem;opacity:.6"></i></div>`}
+        <div class="school-info">
+          <div><i class="bi bi-geo-alt"></i> <strong>Konum:</strong> ${OKUL.konum}</div>
+          <div><i class="bi bi-calendar-event"></i> <strong>Tarih:</strong> ${OKUL.tarih}</div>
+          <div><i class="bi bi-pc-display"></i> <strong>Kurulan Modeller:</strong> ${OKUL.modeller.join(", ")}</div>
+        </div>
+        
+        ${galeri.length > 0 ? `
+        <div class="gallery-accordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#galleryCollapse">
+                <i class="bi bi-images me-2"></i> Kurulum Görselleri (${galeri.length})
+              </button>
+            </h2>
+            <div id="galleryCollapse" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                ${galeri.map((img, index) => `
+                  <a href="${img}" data-fancybox="okul-galeri" data-caption="${OKUL.ad} - ${index + 1}">
+                    <div class="gallery-item">
+                      <img src="${img}" alt="${OKUL.ad} - ${index + 1}">
+                    </div>
+                  </a>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+        ` : ''}
+      `;
+    }
+
+    /* ===================== 3) INIT ===================== */
+    document.addEventListener('DOMContentLoaded', async () => {
+      if (window.Fancybox) Fancybox.bind("[data-fancybox]", {});
+      renderCards();
+
+      // Scroll-top & navbar efekt
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      scrollTopBtn.addEventListener('click', utils.scrollToTop);
+      window.addEventListener('scroll', () => {
+        scrollTopBtn.style.display = window.scrollY > 300 ? "flex" : "none";
+        document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+      });
+
+      // İndirme butonları güvenli açılış
+      document.body.addEventListener('click', (e) => {
+        const btn = e.target.closest('.download-btn, .deepfreeze-btn');
+        if(!btn || btn.classList.contains('disabled')) return;
+        const url = btn.getAttribute('href'); if(!url) return;
+        if(btn.matches('[data-fancybox]')) return; // galeri ise normal çalışsın
+        e.preventDefault();
+        utils.showLoading(btn);
+        const win = window.open('about:blank', '_blank', 'noopener,noreferrer');
+        setTimeout(() => {
+          utils.hideLoading(btn);
+          if (win) win.location.href = url; else window.open(url, '_blank', 'noopener,noreferrer');
+        }, 500);
+      });
+
+      // Install modal kapandığında videoları resetle
+      const installModal = document.getElementById('installModal');
+      if (installModal) {
+        installModal.addEventListener('hidden.bs.modal', () => {
+          installModal.querySelectorAll('iframe').forEach(iframe => { iframe.src = iframe.src; });
+        });
+      }
+
+      // OKUL: galeriyi tara ve kartı bas
+      const gal = await taraGaleri();
+      okulKartiCiz(gal);
     });
   </script>
 </body>
